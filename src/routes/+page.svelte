@@ -1,0 +1,29 @@
+<div class="mx-auto flex flex-col gap-4">
+  <div
+    class="relative flex h-[60vh] min-h-96 w-full place-items-center justify-center bg-neutral-100 px-4 dark:bg-neutral-900"
+  >
+    <div class="flex flex-col items-center gap-2">
+      <div class="flex flex-row items-center gap-2">
+        <span class="relative text-5xl font-medium lg:text-6xl">McSrvrS</span>
+        <span
+          class="rounded-full border-1 border-orange-400 px-3 py-1 text-sm text-orange-400 dark:border-orange-600 dark:text-orange-600"
+          >Developing</span
+        >
+      </div>
+      <span class="text-center text-2xl font-light">Check your Minecraft Server's status on the go.</span>
+      <a class="rounded-full bg-blue-500 px-6 py-2 text-lg text-white" href="/apps/mcsrvrs">Learn More</a>
+    </div>
+  </div>
+  <div
+    class="relative flex h-[60vh] min-h-96 w-full place-items-center justify-center bg-linear-to-b from-slate-50 to-blue-400 to-75% dark:from-slate-950 dark:to-blue-800"
+  >
+    <div class="flex flex-col items-center gap-2">
+      <span class="relative text-6xl font-medium">Aaron212</span>
+    </div>
+  </div>
+  <div
+    class="relative flex h-[60vh] min-h-96 w-full place-items-center justify-center bg-neutral-200 dark:bg-neutral-900"
+  >
+    <div>Under Construcion...</div>
+  </div>
+</div>
