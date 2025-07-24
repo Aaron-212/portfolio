@@ -11,7 +11,7 @@
         >
       </div>
       <span class="text-center text-2xl font-light">Check your Minecraft Server's status on the go.</span>
-      <a class="rounded-full bg-blue-500 px-6 py-2 text-lg text-white" href="/apps/mcsrvrs">Learn More</a>
+      <a class="rounded-full bg-blue-500 px-6 py-2 text-lg text-white" href="#">Learn More</a>
     </div>
   </div>
   <div

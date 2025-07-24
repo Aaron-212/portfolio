@@ -35,7 +35,7 @@
       links: [
         {
           label: 'McSrvrS',
-          href: '/projects/mcsrvrs'
+          href: '#'
         }
       ]
     },
@@ -45,7 +45,7 @@
       links: [
         {
           label: 'Hello',
-          href: '/hello'
+          href: '#'
         }
       ]
     },
@@ -55,7 +55,7 @@
       links: [
         {
           label: 'Hello',
-          href: '/hello'
+          href: '#'
         }
       ]
     },
