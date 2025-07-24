@@ -5,3 +5,7 @@
   @apply bg-white text-black dark:bg-black dark:text-white;
   font-familt: system-ui, sans-serif;
 }
+
+a {
+  @apply hover:underline;
+}

@@ -6,8 +6,6 @@
 <footer class="flex h-32 w-full flex-col items-center justify-center bg-slate-100 select-none dark:bg-slate-950">
   <p>Aaron212 © 2021-{year}</p>
   <p class="text-sm">
-    All content is under <a class="underline" href="https://creativecommons.org/licenses/by-sa/4.0/"
-      >CC BY-SA 4.0 License</a
-    >
+    All content is under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>
   </p>
 </footer>
