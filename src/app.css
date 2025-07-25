@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
-@import 'inter-ui/inter.css';
+@import 'inter-ui/inter-variable.css';
 
 :root {
   @apply bg-white text-black dark:bg-black dark:text-white;
