@@ -6,6 +6,10 @@
   let { children } = $props();
 </script>
 
+<svelte:head>
+  <title>Aaron212</title>
+</svelte:head>
+
 <Header />
 <main class="mt-16 select-none">{@render children()}</main>
 <Footer />

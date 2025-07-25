@@ -1,9 +1,15 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+@import 'inter-ui/inter.css';
 
 :root {
   @apply bg-white text-black dark:bg-black dark:text-white;
-  font-family: system-ui, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    ui-sans,
+    'InterVariable',
+    sans-serif;
 }
 
 a {
