@@ -12,16 +12,16 @@ This is a static Astro portfolio built with TypeScript, Tailwind CSS, MDX, and P
 
 ## Build, Test, and Development Commands
 
-The project targets Node 26 and uses `nub` (see `mise.toml` and `nub.lock`). Install dependencies with `nub install`.
+The project targets Node 26 and uses `nub` (see `mise.toml` and `nub.lock`). Always execute `nub` through `mise` using the form `mise exec -- nub ...`; install dependencies with `mise exec -- nub install`.
 
-- `nub run dev` starts the Astro development server.
-- `nub run check` runs Astro's type checks.
-- `nub run lint` checks Prettier formatting and ESLint rules.
-- `nub run format` applies Prettier formatting across the repository.
-- `nub run build` produces the static production site in `build/`.
-- `nub run preview` serves the production build locally.
+- `mise exec -- nub run dev` starts the Astro development server.
+- `mise exec -- nub run check` runs Astro's type checks.
+- `mise exec -- nub run lint` checks Prettier formatting and ESLint rules.
+- `mise exec -- nub run format` applies Prettier formatting across the repository.
+- `mise exec -- nub run build` produces the static production site in `build/`.
+- `mise exec -- nub run preview` serves the production build locally.
 
-Run `nub run check && nub run lint && nub run build` before opening a pull request. There is no dedicated automated test suite yet; add focused tests when introducing logic that needs regression coverage.
+Run `mise exec -- nub run check`, `mise exec -- nub run lint`, and `mise exec -- nub run build` before opening a pull request. There is no dedicated automated test suite yet; add focused tests when introducing logic that needs regression coverage.
 
 ## Coding Style & Naming Conventions
 

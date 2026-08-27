@@ -1,13 +1,14 @@
 import mdx from "@astrojs/mdx";
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import tailwindcss from "@tailwindcss/vite";
+import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
   output: "static",
   outDir: "./build",
   publicDir: "./static",
-  integrations: [mdx()],
+  integrations: [mdx(), icon()],
   vite: {
     plugins: [
       tailwindcss(),
