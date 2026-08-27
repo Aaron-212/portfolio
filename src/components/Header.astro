@@ -32,12 +32,12 @@ import { Icon } from "astro-icon/components";
 
 <header
   data-site-header
-  class="pointer-events-none fixed top-0 z-50 h-dvh w-dvw bg-neutral-50/0 backdrop-blur-none transition-all duration-250 ease-in-out select-none md:delay-250 dark:bg-neutral-900/0"
+  class="pointer-events-none fixed top-0 z-50 h-dvh w-dvw bg-neutral-50/0 backdrop-blur-none transition-all duration-250 ease-in-out select-none motion-reduce:transition-none md:delay-250 dark:bg-neutral-900/0"
 >
   <nav
     data-navigation
     aria-label="Main navigation"
-    class="pointer-events-auto flex h-12 w-full flex-col items-center overflow-clip bg-neutral-50/80 backdrop-blur-xl transition-all duration-250 ease-in-out md:delay-250 dark:bg-neutral-900/80"
+    class="pointer-events-auto flex h-12 w-full flex-col items-center overflow-clip bg-neutral-50/80 backdrop-blur-xl transition-all duration-250 ease-in-out motion-reduce:transition-none md:delay-250 dark:bg-neutral-900/80"
   >
     <div
       class="flex h-12 w-full shrink-0 flex-row flex-nowrap items-center gap-6 px-6 transition-none md:w-3/4 md:px-0"
@@ -72,7 +72,7 @@ import { Icon } from "astro-icon/components";
 
     <div
       data-menu-content
-      class="flex w-full justify-center opacity-0 transition-opacity duration-250 ease-in-out md:delay-250"
+      class="flex w-full justify-center opacity-0 transition-opacity duration-250 ease-in-out motion-reduce:transition-none md:delay-250"
     >
       <!-- Desktop -->
       <div class="mt-8 hidden w-3/4 shrink-0 overflow-hidden lg:grid lg:items-start">
@@ -80,8 +80,12 @@ import { Icon } from "astro-icon/components";
           links.slice(0, -1).map((link, index) => (
             <div
               data-section-panel={link.label}
-              class="col-start-1 row-start-1 flex min-w-40 flex-col gap-2 justify-self-start"
-              hidden={index !== 0}
+              class:list={[
+                "col-start-1 row-start-1 flex min-w-40 flex-col gap-2 justify-self-start transition-opacity duration-200 ease-in-out motion-reduce:transition-none",
+                index === 0 ? "opacity-100" : "pointer-events-none opacity-0"
+              ]}
+              aria-hidden={index !== 0 ? "true" : undefined}
+              inert={index !== 0}
             >
               <p class="text-sm text-slate-700 dark:text-slate-300">{link.label}</p>
               {link.links.map((sublink) => (
@@ -168,17 +172,11 @@ import { Icon } from "astro-icon/components";
 
       header.querySelectorAll<HTMLElement>("[data-section-panel]").forEach((panel) => {
         const isActive = panel.dataset.sectionPanel === section;
-        panel.hidden = !isActive;
-
-        if (isActive && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          panel.animate(
-            [
-              { opacity: 0, transform: "translateX(100px)" },
-              { opacity: 1, transform: "translateX(0)" }
-            ],
-            { duration: 200, easing: "ease-out" }
-          );
-        }
+        panel.classList.toggle("opacity-100", isActive);
+        panel.classList.toggle("opacity-0", !isActive);
+        panel.classList.toggle("pointer-events-none", !isActive);
+        panel.toggleAttribute("inert", !isActive);
+        panel.setAttribute("aria-hidden", String(!isActive));
       });
     });
   });
