@@ -16,9 +16,9 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 ---
 
-<PostLayout title={post.data.title} excerpt={post.data.excerpt}>
+<PostLayout title={post.data.title} excerpt={post.data.excerpt} headings={headings}>
   <Content />
 </PostLayout>
