@@ -12,7 +12,7 @@ const { title, excerpt, headings = [] } = Astro.props;
 const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3);
 ---
 
-<BaseLayout title={`${title} | Aaron212`} description={excerpt}>
+<BaseLayout title={`${title}`} description={excerpt}>
   <div class="mx-4 my-4 flex flex-col-reverse gap-8 lg:flex-row lg:items-start lg:justify-center">
     <article class="lg:prose-l prose min-w-0 select-auto dark:prose-invert">
       <h1>{title}</h1>

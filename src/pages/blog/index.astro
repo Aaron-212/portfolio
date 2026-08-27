@@ -5,7 +5,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout title="Blog | Aaron212">
+<BaseLayout title="Blog">
   <div class="mx-auto my-4 w-full px-6 md:w-3/4 md:px-0">
     <h1 class="mb-6 text-3xl font-bold">Blog</h1>
 
