@@ -26,10 +26,10 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
           class="not-prose p-5 lg:sticky lg:top-24 lg:w-56 lg:flex-none lg:self-start"
         >
           <p class="mb-3 text-sm font-semibold uppercase">On this page</p>
-          <ol class="space-y-2 border-l border-blue-200 text-sm dark:border-blue-800">
+          <ol class="space-y-2 border-l border-blue-light/60 text-sm dark:border-blue-dark/60">
             {tableOfContents.map(({ depth, slug, text }) => (
               <li
-                class={`group border-s-0 text-black/60 transition-all aria-[current=location]:border-s-2 aria-[current=location]:text-blue-700 dark:text-white/60 dark:aria-[current=location]:text-blue-300 ${depth === 3 ? "ps-8" : "ps-4"}`}
+                class={`group border-s-0 text-black/60 transition-all aria-[current=location]:border-s-2 aria-[current=location]:text-blue-light dark:text-white/60 dark:aria-[current=location]:text-blue-dark ${depth === 3 ? "ps-8" : "ps-4"}`}
                 data-toc-item
               >
                 <a class="block text-inherit group-aria-[current=location]:font-semibold" href={`#${slug}`}>
