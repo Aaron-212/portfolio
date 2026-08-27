@@ -40,5 +40,12 @@
 		"@iconify/svelte": "^5.0.0",
 		"@inlang/paraglide-js": "^2.0.0",
 		"inter-ui": "^4.1.1"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "nub",
+			"version": "^0.7.5",
+			"onFail": "ignore"
+		}
 	}
 }
