@@ -23,9 +23,9 @@ const { title = "Aaron212", description = "Aaron212's portfolio, projects, and b
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="flex min-h-dvh flex-col">
     <Header />
-    <main class="mt-16 select-none"><slot /></main>
+    <main class="mt-16 flex-1 select-none"><slot /></main>
     <Footer />
   </body>
 </html>
