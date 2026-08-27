@@ -1,16 +1,9 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
-@import "inter-ui/inter-variable.css";
 
 :root {
   @apply bg-white text-black dark:bg-black dark:text-white;
-  font-family:
-    system-ui,
-    -apple-system,
-    ui-sans,
-    "InterVariable",
-    sans-serif;
-}
+  font-family: -apple-system, "Inter Variable", system-ui, ui-sans, sans-serif;}
 
 a {
   @apply hover:underline;

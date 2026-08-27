@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
-import Header from "../lib/components/Header.svelte";
+import Header from "../lib/components/Header.astro";
+import "@fontsource-variable/inter";
 import "../app.css";
 
 interface Props {
@@ -23,7 +24,7 @@ const { title = "Aaron212", description = "Aaron212's portfolio, projects, and b
     <title>{title}</title>
   </head>
   <body>
-    <Header client:load />
+    <Header />
     <main class="mt-16 select-none"><slot /></main>
     <Footer />
   </body>

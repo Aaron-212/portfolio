@@ -1,5 +1,4 @@
 import mdx from "@astrojs/mdx";
-import svelte from "@astrojs/svelte";
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
@@ -8,7 +7,7 @@ export default defineConfig({
   output: "static",
   outDir: "./build",
   publicDir: "./static",
-  integrations: [svelte(), mdx()],
+  integrations: [mdx()],
   vite: {
     plugins: [
       tailwindcss(),
