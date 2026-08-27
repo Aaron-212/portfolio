@@ -9,3 +9,29 @@
 a {
   @apply hover:underline;
 }
+
+@theme {
+  --color-*: initial;
+
+  --color-neutral-50: oklch(98% 0.002 255);
+  --color-neutral-100: oklch(95% 0.003 255);
+  --color-neutral-200: oklch(91% 0.004 255);
+  --color-neutral-300: oklch(86% 0.005 255);
+  --color-neutral-400: oklch(78% 0.006 255);
+  --color-neutral-500: oklch(55% 0.007 255);
+  --color-neutral-600: oklch(37% 0.007 255);
+  --color-neutral-700: oklch(28% 0.006 255);
+  --color-neutral-800: oklch(21% 0.005 255);
+  --color-neutral-900: oklch(14% 0.004 255);
+  --color-neutral-950: oklch(9% 0.003 255);
+
+  --color-blue-light: oklch(0.6028 0.2177 257.42);
+  --color-blue-dark: oklch(0.6243 0.2055 255.52);
+  --color-orange-light: oklch(0.7652 0.1752 62.57);
+  --color-oragne-dark: oklch(0.7807 0.1712 66.67);
+  --color-mint-light: oklch(0.7483 0.1293 189.02);
+  --color-mint-dark: oklch(0.8023 0.0998 192.11);
+
+  --color-white: #fff;
+  --color-black: #000;
+}
