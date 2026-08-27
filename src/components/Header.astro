@@ -40,29 +40,27 @@ import { Icon } from "astro-icon/components";
       <span class="text-lg font-bold text-black select-none dark:text-white">Aaron212</span>
 
       <div data-desktop-sections class="hidden items-center lg:flex">
-        {
-          links.slice(0, -1).map((link) => (
-            <div data-section-group class="flex h-12 items-center px-2">
-              <a class="text-black dark:text-white" href={link.href}>
-                {link.label}
-              </a>
-              <div
-                data-section-panel
-                class="pointer-events-none absolute top-10 left-1/2 z-10 flex w-3/4 -translate-x-1/2 flex-col gap-2 pt-10 opacity-0 transition-opacity duration-200 ease-in-out motion-reduce:transition-none"
-              >
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">{link.label}</p>
-                {link.links.map((sublink) => (
-                  <a
-                    class="w-fit text-2xl font-bold text-black transition-colors duration-200 ease-in-out dark:text-white"
-                    href={sublink.href}
-                  >
-                    {sublink.label}
-                  </a>
-                ))}
-              </div>
+        {links.slice(0, -1).map((link) => (
+          <div data-section-group class="flex h-12 items-center px-2">
+            <a class="text-black dark:text-white" href={link.href}>
+              {link.label}
+            </a>
+            <div
+              data-section-panel
+              class="pointer-events-none absolute top-10 left-1/2 z-10 flex w-3/4 -translate-x-1/2 flex-col gap-2 pt-10 opacity-0 transition-opacity duration-200 ease-in-out motion-reduce:transition-none"
+            >
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">{link.label}</p>
+              {link.links.map((sublink) => (
+                <a
+                  class="w-fit text-2xl font-bold text-black transition-colors duration-200 ease-in-out dark:text-white"
+                  href={sublink.href}
+                >
+                  {sublink.label}
+                </a>
+              ))}
             </div>
-          ))
-        }
+          </div>
+        ))}
       </div>
 
       <div class="grow"><!-- Spacer --></div>
@@ -78,148 +76,136 @@ import { Icon } from "astro-icon/components";
           <Icon name="lucide:menu" />
         </summary>
         <div class="absolute top-12 left-0 flex w-full flex-col gap-2 px-5 pt-8">
-          {
-            links.flatMap((link) =>
-              link.links.map((sublink) => (
-                <a
-                  class="text-2xl font-bold text-black transition-colors duration-200 ease-in-out dark:text-white"
-                  href={sublink.href}
-                >
-                  {sublink.label}
-                </a>
-              ))
-            )
-          }
-        </div>
-      </details>
-    </div>
-
-    {
-      links.slice(-1).map((link) => (
-        <div
-          data-desktop-menu
-          class="pointer-events-none absolute top-10 right-[12.5%] z-10 hidden flex-col items-end gap-2 pt-10 opacity-0 transition-opacity duration-200 ease-in-out motion-reduce:transition-none lg:flex"
-        >
-          <p class="text-sm text-neutral-700 dark:text-neutral-300">{link.label}</p>
-          {link.links.map((sublink) => (
+          {links.flatMap((link) => link.links.map((sublink) => (
             <a
               class="text-2xl font-bold text-black transition-colors duration-200 ease-in-out dark:text-white"
               href={sublink.href}
             >
               {sublink.label}
             </a>
-          ))}
+          )))}
         </div>
-      ))
-    }
+      </details>
+    </div>
+
+    {links.slice(-1).map((link) => (
+      <div
+        data-desktop-menu
+        class="pointer-events-none absolute top-10 right-[12.5%] z-10 hidden flex-col items-end gap-2 pt-10 opacity-0 transition-opacity duration-200 ease-in-out motion-reduce:transition-none lg:flex"
+      >
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">{link.label}</p>
+        {link.links.map((sublink) => (
+          <a
+            class="text-2xl font-bold text-black transition-colors duration-200 ease-in-out dark:text-white"
+            href={sublink.href}
+          >
+            {sublink.label}
+          </a>
+        ))}
+      </div>
+    ))}
   </nav>
 </header>
 
 <style>
-  [data-site-header]::before {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-color: transparent;
+[data-site-header]::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: transparent;
+  backdrop-filter: none;
+  transition: background-color 250ms ease-in-out, backdrop-filter 250ms ease-in-out;
+  content: "";
+}
+
+[data-mobile-menu] summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (max-width: 63.999rem) {
+  [data-navigation]:has([data-mobile-menu][open]) {
+    height: 75dvh;
     backdrop-filter: none;
-    transition:
-      background-color 250ms ease-in-out,
-      backdrop-filter 250ms ease-in-out;
+  }
+
+  [data-site-header]:has([data-mobile-menu][open])::before {
+    background-color: rgb(250 250 250 / 0.25);
+    backdrop-filter: blur(24px);
+  }
+}
+
+@media (min-width: 64rem) {
+  [data-site-header]::before {
+    transition-delay: 250ms;
+  }
+
+  [data-navigation]:is(:has([data-section-group]:focus-within), :has([data-desktop-menu]:focus-within)) {
+    height: 20rem;
+    backdrop-filter: none;
+  }
+
+  [data-site-header]:has([data-navigation]:is(:has([data-section-group]:focus-within), :has([data-desktop-menu]:focus-within)))::before {
+    background-color: rgb(250 250 250 / 0.25);
+    backdrop-filter: blur(24px);
+  }
+
+  [data-section-group]:focus-within [data-section-panel],
+  [data-desktop-menu]:focus-within {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
+  [data-section-group]:hover::after {
+    position: absolute;
+    inset: 3rem 0 0;
+    z-index: 0;
     content: "";
   }
 
-  [data-mobile-menu] summary::-webkit-details-marker {
-    display: none;
+  [data-navigation]:hover {
+    height: 20rem;
+    backdrop-filter: none;
   }
 
-  @media (max-width: 63.999rem) {
-    [data-navigation]:has([data-mobile-menu][open]) {
-      height: 75dvh;
-      backdrop-filter: none;
-    }
-
-    [data-site-header]:has([data-mobile-menu][open])::before {
-      background-color: rgb(250 250 250 / 0.25);
-      backdrop-filter: blur(24px);
-    }
+  [data-site-header]:has([data-navigation]:hover)::before {
+    background-color: rgb(250 250 250 / 0.25);
+    backdrop-filter: blur(24px);
   }
 
-  @media (min-width: 64rem) {
-    [data-site-header]::before {
-      transition-delay: 250ms;
-    }
-
-    [data-navigation]:is(:has([data-section-group]:focus-within), :has([data-desktop-menu]:focus-within)) {
-      height: 20rem;
-      backdrop-filter: none;
-    }
-
-    [data-site-header]:has(
-        [data-navigation]:is(:has([data-section-group]:focus-within), :has([data-desktop-menu]:focus-within))
-      )::before {
-      background-color: rgb(250 250 250 / 0.25);
-      backdrop-filter: blur(24px);
-    }
-
-    [data-section-group]:focus-within [data-section-panel],
-    [data-desktop-menu]:focus-within {
-      pointer-events: auto;
-      opacity: 1;
-    }
+  [data-navigation]:hover [data-desktop-menu],
+  [data-navigation]:hover
+    [data-desktop-sections]:not(:has([data-section-group]:is(:hover, :focus-within)))
+    [data-section-group]:first-child
+    [data-section-panel],
+  [data-navigation]:hover [data-section-group]:is(:hover, :focus-within) [data-section-panel] {
+    pointer-events: auto;
+    opacity: 1;
   }
+}
 
-  @media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
-    [data-section-group]:hover::after {
-      position: absolute;
-      inset: 3rem 0 0;
-      z-index: 0;
-      content: "";
-    }
-
-    [data-navigation]:hover {
-      height: 20rem;
-      backdrop-filter: none;
-    }
-
-    [data-site-header]:has([data-navigation]:hover)::before {
-      background-color: rgb(250 250 250 / 0.25);
-      backdrop-filter: blur(24px);
-    }
-
-    [data-navigation]:hover [data-desktop-menu],
-    [data-navigation]:hover
-      [data-desktop-sections]:not(:has([data-section-group]:is(:hover, :focus-within)))
-      [data-section-group]:first-child
-      [data-section-panel],
-    [data-navigation]:hover [data-section-group]:is(:hover, :focus-within) [data-section-panel] {
-      pointer-events: auto;
-      opacity: 1;
-    }
+@media (max-width: 63.999rem) and (prefers-color-scheme: dark) {
+  [data-site-header]:has([data-mobile-menu][open])::before {
+    background-color: rgb(23 23 23 / 0.25);
   }
+}
 
-  @media (max-width: 63.999rem) and (prefers-color-scheme: dark) {
-    [data-site-header]:has([data-mobile-menu][open])::before {
-      background-color: rgb(23 23 23 / 0.25);
-    }
+@media (min-width: 64rem) and (prefers-color-scheme: dark) {
+  [data-site-header]:has([data-navigation]:is(:has([data-section-group]:focus-within), :has([data-desktop-menu]:focus-within)))::before {
+    background-color: rgb(23 23 23 / 0.25);
   }
+}
 
-  @media (min-width: 64rem) and (prefers-color-scheme: dark) {
-    [data-site-header]:has(
-        [data-navigation]:is(:has([data-section-group]:focus-within), :has([data-desktop-menu]:focus-within))
-      )::before {
-      background-color: rgb(23 23 23 / 0.25);
-    }
+@media (min-width: 64rem) and (hover: hover) and (pointer: fine) and (prefers-color-scheme: dark) {
+  [data-site-header]:has([data-navigation]:hover)::before {
+    background-color: rgb(23 23 23 / 0.25);
   }
+}
 
-  @media (min-width: 64rem) and (hover: hover) and (pointer: fine) and (prefers-color-scheme: dark) {
-    [data-site-header]:has([data-navigation]:hover)::before {
-      background-color: rgb(23 23 23 / 0.25);
-    }
+@media (prefers-reduced-motion: reduce) {
+  [data-site-header]::before {
+    transition: none;
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    [data-site-header]::before {
-      transition: none;
-    }
-  }
+}
 </style>

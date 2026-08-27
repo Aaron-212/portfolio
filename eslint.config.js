@@ -1,4 +1,3 @@
-import prettier from "eslint-config-prettier";
 import { includeIgnoreFile } from "@eslint/compat";
 import js from "@eslint/js";
 import globals from "globals";
@@ -11,7 +10,6 @@ export default ts.config(
   includeIgnoreFile(gitignorePath),
   js.configs.recommended,
   ...ts.configs.recommended,
-  prettier,
   {
     languageOptions: {
       globals: { ...globals.browser, ...globals.node }

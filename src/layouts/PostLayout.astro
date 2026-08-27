@@ -1,6 +1,6 @@
 ---
-import type { MarkdownHeading } from "astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { MarkdownHeading } from "astro";
 
 interface Props {
   title: string;
@@ -18,72 +18,72 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
       <h1>{title}</h1>
       <slot />
     </article>
-    {
-      tableOfContents.length > 0 && (
-        <nav
-          aria-label="Table of contents"
-          data-table-of-contents
-          class="not-prose p-5 lg:sticky lg:top-24 lg:w-56 lg:flex-none lg:self-start"
-        >
-          <p class="mb-3 text-sm font-semibold uppercase">On this page</p>
-          <ol class="space-y-2 border-l border-blue-light/60 text-sm dark:border-blue-dark/60">
-            {tableOfContents.map(({ depth, slug, text }) => (
-              <li
-                class={`group border-s-0 text-black/60 transition-all aria-[current=location]:border-s-2 aria-[current=location]:text-blue-light dark:text-white/60 dark:aria-[current=location]:text-blue-dark ${depth === 3 ? "ps-8" : "ps-4"}`}
-                data-toc-item
-              >
-                <a class="block text-inherit group-aria-[current=location]:font-semibold" href={`#${slug}`}>
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-      )
-    }
+    {tableOfContents.length > 0 && (
+      <nav
+        aria-label="Table of contents"
+        data-table-of-contents
+        class="not-prose p-5 lg:sticky lg:top-24 lg:w-56 lg:flex-none lg:self-start"
+      >
+        <p class="mb-3 text-sm font-semibold uppercase">On this page</p>
+        <ol class="space-y-2 border-l border-blue-light/60 text-sm dark:border-blue-dark/60">
+          {tableOfContents.map(({ depth, slug, text }) => (
+            <li
+              class={`group border-s-0 text-black/60 transition-all aria-[current=location]:border-s-2 aria-[current=location]:text-blue-light dark:text-white/60 dark:aria-[current=location]:text-blue-dark ${
+                depth === 3 ? "ps-8" : "ps-4"
+              }`}
+              data-toc-item
+            >
+              <a class="block text-inherit group-aria-[current=location]:font-semibold" href={`#${slug}`}>
+                {text}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
   </div>
 
   <script>
-    const tableOfContents = document.querySelector<HTMLElement>("[data-table-of-contents]");
-    const items = Array.from(tableOfContents?.querySelectorAll<HTMLElement>("[data-toc-item]") ?? []);
-    const entries = items.flatMap((item) => {
-      const link = item.querySelector<HTMLAnchorElement>("a[href^='#']");
-      const id = link?.getAttribute("href")?.slice(1);
-      const heading = id ? document.getElementById(id) : null;
+  const tableOfContents = document.querySelector<HTMLElement>("[data-table-of-contents]");
+  const items = Array.from(tableOfContents?.querySelectorAll<HTMLElement>("[data-toc-item]") ?? []);
+  const entries = items.flatMap((item) => {
+    const link = item.querySelector<HTMLAnchorElement>("a[href^='#']");
+    const id = link?.getAttribute("href")?.slice(1);
+    const heading = id ? document.getElementById(id) : null;
 
-      return heading ? [{ heading, item }] : [];
-    });
+    return heading ? [{ heading, item }] : [];
+  });
 
-    let animationFrame: number | undefined;
+  let animationFrame: number | undefined;
 
-    function updateCurrentHeading() {
-      animationFrame = undefined;
-      if (entries.length === 0) return;
+  function updateCurrentHeading() {
+    animationFrame = undefined;
+    if (entries.length === 0) return;
 
-      const readingLine = 112;
-      let current = entries[0];
+    const readingLine = 112;
+    let current = entries[0];
 
-      for (const entry of entries) {
-        if (entry.heading.getBoundingClientRect().top > readingLine) break;
-        current = entry;
-      }
-
-      for (const entry of entries) {
-        if (entry === current) {
-          entry.item.setAttribute("aria-current", "location");
-        } else {
-          entry.item.removeAttribute("aria-current");
-        }
-      }
+    for (const entry of entries) {
+      if (entry.heading.getBoundingClientRect().top > readingLine) break;
+      current = entry;
     }
 
-    function scheduleUpdate() {
-      if (animationFrame !== undefined) return;
-      animationFrame = requestAnimationFrame(updateCurrentHeading);
+    for (const entry of entries) {
+      if (entry === current) {
+        entry.item.setAttribute("aria-current", "location");
+      } else {
+        entry.item.removeAttribute("aria-current");
+      }
     }
+  }
 
-    updateCurrentHeading();
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate);
+  function scheduleUpdate() {
+    if (animationFrame !== undefined) return;
+    animationFrame = requestAnimationFrame(updateCurrentHeading);
+  }
+
+  updateCurrentHeading();
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
   </script>
 </BaseLayout>
