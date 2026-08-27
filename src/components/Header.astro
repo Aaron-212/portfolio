@@ -40,7 +40,7 @@ import { Icon } from "astro-icon/components";
     class="pointer-events-auto flex h-12 w-full flex-col items-center overflow-clip bg-neutral-50/80 backdrop-blur-xl transition-all duration-250 ease-in-out md:delay-250 dark:bg-neutral-900/80"
   >
     <div
-      class="flex h-12 w-full flex-shrink-0 flex-row flex-nowrap items-center gap-6 px-6 transition-none md:w-3/4 md:px-0"
+      class="flex h-12 w-full shrink-0 flex-row flex-nowrap items-center gap-6 px-6 transition-none md:w-3/4 md:px-0"
     >
       <a class="text-lg font-bold text-black dark:text-white" href="/">Aaron212</a>
       <div class="hidden flex-row items-center gap-4 lg:flex">
@@ -52,7 +52,7 @@ import { Icon } from "astro-icon/components";
           ))
         }
       </div>
-      <div class="flex-grow"><!-- Spacer --></div>
+      <div class="grow"><!-- Spacer --></div>
       <a href="https://x.com/AR___212" aria-label="Aaron212 on X">
         <Icon name="simple-icons:x" class="max-h-5" />
       </a>
@@ -72,10 +72,10 @@ import { Icon } from "astro-icon/components";
 
     <div
       data-menu-content
-      class="flex w-full justify-center opacity-0 transition-[opacity] duration-250 ease-in-out md:delay-250"
+      class="flex w-full justify-center opacity-0 transition-opacity duration-250 ease-in-out md:delay-250"
     >
       <!-- Desktop -->
-      <div class="mt-8 hidden w-3/4 flex-shrink-0 overflow-hidden lg:grid lg:items-start">
+      <div class="mt-8 hidden w-3/4 shrink-0 overflow-hidden lg:grid lg:items-start">
         {
           links.slice(0, -1).map((link, index) => (
             <div
@@ -113,7 +113,7 @@ import { Icon } from "astro-icon/components";
       </div>
 
       <!-- Mobile -->
-      <div class="mt-8 flex w-full flex-shrink-0 flex-col gap-2 overflow-hidden px-5 lg:hidden">
+      <div class="mt-8 flex w-full shrink-0 flex-col gap-2 overflow-hidden px-5 lg:hidden">
         {
           links.flatMap((link) =>
             link.links.map((sublink) => (
