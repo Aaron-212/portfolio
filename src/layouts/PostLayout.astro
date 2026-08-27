@@ -1,0 +1,16 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  excerpt?: string;
+}
+
+const { title, excerpt } = Astro.props;
+---
+
+<BaseLayout title={`${title} | Aaron212`} description={excerpt}>
+  <article class="mx-4 my-4 prose select-auto lg:mx-auto lg:prose-xl lg:max-w-prose dark:prose-invert">
+    <slot />
+  </article>
+</BaseLayout>

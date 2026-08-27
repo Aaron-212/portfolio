@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Icon from '@iconify/svelte';
-  import { fly } from 'svelte/transition';
+  import Icon from "@iconify/svelte";
+  import { fly } from "svelte/transition";
 
   let isHovering = false;
   function handleMouseEnter() {
@@ -13,59 +13,59 @@
     isHovering = !isHovering;
   }
 
-  let hoveredSection = 'Home';
+  let hoveredSection = "Home";
   function handleSectionHover(section: string) {
     hoveredSection = section;
   }
 
   const links = [
     {
-      label: 'Home',
-      href: '/',
+      label: "Home",
+      href: "/",
       links: [
         {
-          label: 'About',
-          href: '/about'
+          label: "About",
+          href: "/about"
         }
       ]
     },
     {
-      label: 'Projects',
-      href: '/projects',
+      label: "Projects",
+      href: "/projects",
       links: [
         {
-          label: 'McSrvrS',
-          href: '#'
+          label: "McSrvrS",
+          href: "#"
         }
       ]
     },
     {
-      label: 'Blog',
-      href: '/blog',
+      label: "Blog",
+      href: "/blog",
       links: [
         {
-          label: 'Hello',
-          href: '#'
+          label: "Hello",
+          href: "#"
         }
       ]
     },
     {
-      label: 'Docs',
-      href: '/docs',
+      label: "Docs",
+      href: "/docs",
       links: [
         {
-          label: 'Hello',
-          href: '#'
+          label: "Hello",
+          href: "#"
         }
       ]
     },
     {
-      label: 'Other Links',
-      href: '#',
+      label: "Other Links",
+      href: "#",
       links: [
         {
-          label: 'CNBlogs',
-          href: 'https://www.cnblogs.com/Aaron212'
+          label: "CNBlogs",
+          href: "https://www.cnblogs.com/Aaron212"
         }
       ]
     }
@@ -76,13 +76,13 @@
 
 <header
   class={`pointer-events-none fixed top-0 z-50 h-dvh w-dvw backdrop-blur-none transition-all duration-250 ease-in-out select-none md:delay-250
-    ${isHovering ? 'bg-neutral-50/25 backdrop-blur-xl dark:bg-neutral-900/25' : 'bg-neutral-50/0 dark:bg-neutral-900/0 '}
+    ${isHovering ? "bg-neutral-50/25 backdrop-blur-xl dark:bg-neutral-900/25" : "bg-neutral-50/0 dark:bg-neutral-900/0 "}
   `}
 >
   <div
     role="navigation"
     class={`pointer-events-auto flex h-12 w-full flex-col items-center overflow-clip bg-neutral-50/80 backdrop-blur-xl transition-all duration-250 ease-in-out md:delay-250 dark:bg-neutral-900/80
-      ${isHovering ? 'h-[75vh] backdrop-blur-none md:h-80' : ''}
+      ${isHovering ? "h-[75vh] backdrop-blur-none md:h-80" : ""}
     `}
     onmouseenter={() => handleMouseEnter()}
     onmouseleave={() => handleMouseLeave()}
@@ -105,7 +105,7 @@
     </div>
     <div
       class={`trasition-[opacity] flex w-full justify-center duration-250 ease-in-out md:delay-250
-              ${isHovering ? 'opacity-100' : 'opacity-0'}
+              ${isHovering ? "opacity-100" : "opacity-0"}
             `}
     >
       <!-- Desktop -->

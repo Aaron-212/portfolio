@@ -1,4 +1,4 @@
-name: Build & Deploy Svelte to GitHub Pages (Pages v2)
+name: Build & Deploy Astro to GitHub Pages
 
 on:
   push:
@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: nubjs/setup-nub@v0
 
-      - run: bun install --frozen-lockfile
-      - run: bun run build
+      - run: nub ci
+      - run: nub run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
