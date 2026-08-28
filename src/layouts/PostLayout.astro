@@ -13,7 +13,7 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
 ---
 
 <BaseLayout title={`${title}`} description={excerpt}>
-  <div class="mx-auto my-8 flex w-full max-w-6xl flex-col-reverse gap-8 px-6 lg:flex-row lg:items-start lg:justify-center">
+  <div class="mx-auto my-8 flex max-w-6xl flex-col-reverse gap-8 px-6 lg:flex-row lg:items-start lg:justify-center">
     <article class="prose min-w-0 max-w-3xl flex-1 select-auto dark:prose-invert lg:prose-lg">
       <h1>{title}</h1>
       <slot />
@@ -35,7 +35,7 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
         <nav
           aria-label="Table of contents"
           data-table-of-contents
-          class="not-prose hidden rounded-lg border border-slate-200 p-5 dark:border-slate-800 lg:sticky lg:top-24 lg:block lg:max-h-[calc(100dvh-6rem)] lg:w-64 lg:flex-none lg:self-start lg:overflow-y-auto"
+          class="not-prose hidden rounded-lg border border-slate-200 p-5 dark:border-slate-800 lg:sticky lg:top-24 lg:block lg:max-h-[calc(100dvh-6rem)] lg:w-64 lg:flex-none lg:overflow-y-auto"
         >
           <p class="mb-3 text-sm font-semibold uppercase tracking-wide">On this page</p>
           <ol class="space-y-2 border-l border-blue-light/60 text-sm dark:border-blue-dark/60">

@@ -1,15 +1,20 @@
 ---
 interface Props {
   name: string;
-  lightBgClass?: string;
-  darkBgClass?: string;
+  tone: "mint" | "purple";
 }
 
-const { name, lightBgClass, darkBgClass } = Astro.props;
+const { name, tone } = Astro.props;
 ---
 
 <span
-  class={`rounded-md px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-white ${lightBgClass} dark:${darkBgClass}`}
+  class:list={[
+    "rounded-md px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-white",
+    {
+      "bg-mint-light dark:bg-mint-dark": tone === "mint",
+      "bg-purple-light dark:bg-purple-dark": tone === "purple"
+    }
+  ]}
 >
   {name}
 </span>
