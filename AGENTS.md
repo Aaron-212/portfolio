@@ -2,12 +2,10 @@
 
 ## Project Structure & Module Organization
 
-This is a static Astro portfolio built with TypeScript, Tailwind CSS, MDX, and Paraglide i18n.
+This is a static Astro portfolio built with TypeScript, Tailwind CSS, and MDX.
 
 - `src/pages/` contains file-based Astro pages. Nested directories map to URLs (for example, `src/pages/blog/[slug].astro`).
 - `src/components/` and `src/lib/components/` hold reusable Astro UI components; `src/content/` contains Markdown/MDX blog posts.
-- `src/lib/paraglide/` is generated localization output—do not edit it directly.
-- `messages/en.json` and `messages/zh-cn.json` are translation sources; `project.inlang/` contains i18n configuration.
 - `static/` is for public, unprocessed assets. Global styles live in `src/app.css`.
 
 ## Build, Test, and Development Commands
@@ -33,4 +31,4 @@ Name components in PascalCase (`PostLayout.astro`), use Astro route files (`inde
 
 Recent history uses short, imperative, lowercase subjects such as `fix import`, `deploy test`, and `Migrate to nub.js`. Keep commits narrowly scoped and describe the user-visible change.
 
-Pull requests should summarize the change, note any translation or content updates, link relevant issues when available, and include screenshots for visual changes. Confirm the validation commands above pass and avoid committing generated output (`build/`, `.astro/`, or `src/lib/paraglide/`).
+Pull requests should summarize the change, link relevant issues when available, and include screenshots for visual changes. Confirm the validation commands above pass and avoid committing generated output (`build/` or `.astro/`).

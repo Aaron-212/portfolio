@@ -1,6 +1,6 @@
 # Portfolio
 
-Static portfolio and blog built with Astro, Tailwind CSS, and Paraglide JS.
+Static portfolio and blog built with Astro and Tailwind CSS.
 
 ## Development
 
