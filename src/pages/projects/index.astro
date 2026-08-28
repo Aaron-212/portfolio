@@ -1,5 +1,72 @@
 ---
+import BranchTag from "@/components/BranchTag.astro";
+import ColorSchemeImage from "@/components/ColorSchemeImage.astro";
+import HeroButton from "@/components/HeroButton.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    name: "McSrvrS",
+    slug: "mcsrvrs",
+    status: "Alpha",
+    tone: "mint",
+    description: "A native Minecraft: Java Edition server monitor for iPhone, iPad, and Mac.",
+    lightImage: "https://images-bucket.ar212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png",
+    darkImage: "https://images-bucket.ar212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png",
+    github: "https://github.com/Aaron-212/McSrvrS"
+  },
+  {
+    name: "FnPilot",
+    slug: "fnpilot",
+    status: "Alpha",
+    tone: "mint",
+    description: "Change fn key settings based on the frontmost window.",
+    lightImage: "https://images-bucket.ar212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png",
+    darkImage: "https://images-bucket.ar212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png",
+    github: "https://github.com/Aaron-212/FnPilot"
+  },
+  {
+    name: "NBTPlus",
+    slug: "nbtplus",
+    status: "Dev",
+    tone: "purple",
+    description: "A simple NBT editor for macOS.",
+    lightImage: "https://images-bucket.ar212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png",
+    darkImage: "https://images-bucket.ar212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png",
+    github: "https://github.com/Aaron-212/NBTPlus"
+  }
+] as const;
 ---
 
-<BaseLayout title="Projects" />
+<BaseLayout title="Projects">
+  <div class="mx-auto max-w-6xl px-6 py-12 lg:py-20">
+    <div class="mb-10 text-center">
+      <h1 class="text-4xl font-semibold tracking-tight lg:text-5xl">Projects</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg font-light text-slate-700 dark:text-slate-300">
+        A collection of apps and tools I’m building for Apple platforms.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <article class="flex flex-col overflow-hidden rounded-4xl bg-slate-100 p-4 dark:bg-slate-900">
+          <ColorSchemeImage
+            lightSrc={project.lightImage}
+            darkSrc={project.darkImage}
+            alt={`${project.name} app icon`}
+            class="mb-6 w-32 lg:w-48"
+          />
+          <div class="flex items-center gap-2">
+            <h2 class="text-2xl font-medium">{project.name}</h2>
+            <BranchTag name={project.status} tone={project.tone} />
+          </div>
+          <p class="mt-3 flex-1 text-slate-700 dark:text-slate-300">{project.description}</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <HeroButton label="Learn More" href={`/projects/${project.slug}`} variant="primary" />
+            <HeroButton label="GitHub" href={project.github} variant="secondary" />
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
