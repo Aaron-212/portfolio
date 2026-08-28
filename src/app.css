@@ -7,10 +7,6 @@
   text-autospace: normal;
 }
 
-a {
-  @apply hover:underline;
-}
-
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {
@@ -25,6 +21,10 @@ a {
 
 .prose :is(h1, h2, h3, h4, h5, h6) {
   @apply scroll-mt-20;
+}
+
+.prose a {
+  @apply hover:underline;
 }
 
 @theme {

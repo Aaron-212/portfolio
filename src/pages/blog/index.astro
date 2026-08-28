@@ -6,17 +6,22 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf()
 ---
 
 <BaseLayout title="Blog">
-  <div class="mx-auto my-4 w-full px-6 md:w-3/4 md:px-0">
-    <h1 class="mb-6 text-3xl font-bold">Blog</h1>
+  <div class="mx-auto my-8 w-full max-w-4xl px-6">
+    <h1 class="mb-8 text-4xl font-semibold tracking-tight lg:text-5xl">Blog</h1>
 
-    <ul class="space-y-4">
+    <ul class="space-y-6">
       {posts.map((post) => (
         <li>
-          <a class="text-xl font-semibold" href={`/blog/${post.id}`}>
+          <a
+            class="text-xl font-semibold transition-colors hover:text-blue-light focus-visible:text-blue-light dark:hover:text-blue-dark dark:focus-visible:text-blue-dark"
+            href={`/blog/${post.id}`}
+          >
             {post.data.title}
           </a>
-          <p class="text-sm text-slate-500">{post.data.date.toLocaleDateString()}</p>
-          {post.data.excerpt && <p class="mt-1">{post.data.excerpt}</p>}
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{post.data.date.toLocaleDateString()}</p>
+          {post.data.excerpt && (
+            <p class="mt-2 leading-relaxed text-slate-700 dark:text-slate-300">{post.data.excerpt}</p>
+          )}
         </li>
       ))}
     </ul>
