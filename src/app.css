@@ -3,9 +3,7 @@
 
 :root {
   @apply bg-white text-black dark:bg-black dark:text-white;
-  font-family:
-    -apple-system, "Inter Variable", "Noto Sans SC Variable", system-ui,
-    ui-sans, sans-serif;
+  font-family: -apple-system, "Inter Variable", "Noto Sans SC Variable", system-ui, ui-sans, sans-serif;
   text-autospace: normal;
 }
 
