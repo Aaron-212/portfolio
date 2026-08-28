@@ -3,7 +3,11 @@ const links = [
   {
     label: "Home",
     href: "/",
-    links: [{ label: "About", href: "/about" }]
+    links: [
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about" },
+      { label: "Partner Links", href: "/partner-links" }
+    ]
   },
   {
     label: "Projects",
@@ -71,20 +75,20 @@ import { Icon } from "astro-icon/components";
       </div>
 
       <div class="grow"><!-- Spacer --></div>
-      <div class="flex gap-6">
+      <div class="flex gap-4 lg:gap-6">
         <a href="https://x.com/AR___212" aria-label="Aaron212 on X">
-          <Icon name="simple-icons:x" class="max-h-5" />
+          <Icon name="fa6-brands:x-twitter" class="size-4" />
         </a>
         <a href="https://github.com/Aaron-212" aria-label="Aaron212 on GitHub">
-          <Icon name="simple-icons:github" class="max-h-5" />
+          <Icon name="fa6-brands:github" class="size-4" />
         </a>
       </div>
 
       <details data-mobile-menu class="lg:hidden">
         <summary class="cursor-pointer list-none" aria-label="Toggle navigation menu">
-          <Icon name="lucide:menu" />
+          <Icon name="fa6-solid:bars" class="ml-2 size-4" />
         </summary>
-        <div class="absolute top-12 left-0 flex w-full flex-col gap-2 px-6 pt-8">
+        <div class="absolute top-12 left-1/2 flex w-full max-w-4xl -translate-x-1/2 flex-col gap-2 px-6 pt-8">
           {[...links, rightLinks].flatMap((link) => link.links.map((sublink) => (
             <a
               class="text-2xl font-bold text-black transition-colors duration-200 ease-in-out hover:text-blue-light focus-visible:text-blue-light dark:text-white dark:hover:text-blue-dark dark:focus-visible:text-blue-dark"
@@ -129,7 +133,7 @@ import { Icon } from "astro-icon/components";
   display: none;
 }
 
-@media (max-width: 63.999rem) {
+@media (max-width: 63.999rem), (any-pointer: coarse) {
   [data-navigation]:has([data-mobile-menu][open]) {
     height: 75dvh;
     backdrop-filter: none;
@@ -192,7 +196,18 @@ import { Icon } from "astro-icon/components";
   }
 }
 
-@media (max-width: 63.999rem) and (prefers-color-scheme: dark) {
+@media (any-pointer: coarse) {
+  [data-desktop-sections],
+  [data-desktop-menu] {
+    display: none;
+  }
+
+  [data-mobile-menu] {
+    display: block;
+  }
+}
+
+@media (max-width: 63.999rem) and (prefers-color-scheme: dark), (any-pointer: coarse) and (prefers-color-scheme: dark) {
   [data-site-header]:has([data-mobile-menu][open])::before {
     background-color: rgb(23 23 23 / 0.25);
   }
