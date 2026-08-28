@@ -9,9 +9,9 @@ const { label, href, variant } = Astro.props;
 ---
 
 <a
-  class:list={["text-md rounded-full border px-6 py-2 md:text-lg", {
+  class:list={["text-md rounded-full px-6 py-2 md:text-lg", {
     "bg-blue-light text-white dark:bg-blue-dark": variant === "primary",
-    "bg-white text-blue-light border border-blue-light dark:border-blue-dark": variant === "secondary"
+    "border text-blue-light border-blue-light dark:border-blue-dark": variant === "secondary"
   }]}
   href={href}
 >
