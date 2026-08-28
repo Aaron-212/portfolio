@@ -1,0 +1,13 @@
+---
+interface Props {
+  name: string;
+  lightBgClass?: string;
+  darkBgClass?: string;
+}
+
+const { name, lightBgClass, darkBgClass } = Astro.props;
+---
+
+<span class={`rounded-lg px-2 py-0.5 text-sm font-bold text-white uppercase ${lightBgClass} dark:${darkBgClass}`}>
+  {name}
+</span>

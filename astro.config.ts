@@ -5,6 +5,7 @@ import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
+  site: "https://ar212.com",
   output: "static",
   outDir: "./build",
   publicDir: "./static",
@@ -18,5 +19,13 @@ export default defineConfig({
         strategy: ["preferredLanguage", "baseLocale"]
       })
     ]
+  },
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: "light-plus",
+        dark: "dark-plus"
+      }
+    }
   }
 });

@@ -34,7 +34,7 @@ import { Icon } from "astro-icon/components";
   <nav
     data-navigation
     aria-label="Main navigation"
-    class="pointer-events-auto relative flex h-12 w-full flex-col items-center overflow-clip bg-neutral-50/80 backdrop-blur-xl transition-all duration-250 ease-in-out motion-reduce:transition-none lg:delay-250 dark:bg-neutral-900/80"
+    class="pointer-events-auto relative flex h-12 w-full flex-col items-center overflow-clip bg-slate-50/80 backdrop-blur-xl transition-all duration-250 ease-in-out motion-reduce:transition-none lg:delay-250 dark:bg-slate-950/80"
   >
     <div class="flex h-12 w-full shrink-0 items-center gap-4 px-6 md:w-3/4 md:px-0">
       <span class="text-lg font-bold text-black select-none dark:text-white">Aaron212</span>
@@ -49,7 +49,7 @@ import { Icon } from "astro-icon/components";
               data-section-panel
               class="pointer-events-none absolute top-10 left-1/2 z-10 flex w-3/4 -translate-x-1/2 flex-col gap-2 pt-10 opacity-0 transition-opacity duration-200 ease-in-out motion-reduce:transition-none"
             >
-              <p class="text-sm text-neutral-700 dark:text-neutral-300">{link.label}</p>
+              <p class="text-sm text-slate-700 dark:text-slate-300">{link.label}</p>
               {link.links.map((sublink) => (
                 <a
                   class="w-fit text-2xl font-bold text-black transition-colors duration-200 ease-in-out dark:text-white"
@@ -93,7 +93,7 @@ import { Icon } from "astro-icon/components";
         data-desktop-menu
         class="pointer-events-none absolute top-10 right-[12.5%] z-10 hidden flex-col items-end gap-2 pt-10 opacity-0 transition-opacity duration-200 ease-in-out motion-reduce:transition-none lg:flex"
       >
-        <p class="text-sm text-neutral-700 dark:text-neutral-300">{link.label}</p>
+        <p class="text-sm text-slate-700 dark:text-slate-300">{link.label}</p>
         {link.links.map((sublink) => (
           <a
             class="text-2xl font-bold text-black transition-colors duration-200 ease-in-out dark:text-white"
