@@ -25,6 +25,12 @@ Run `mise exec -- nub run check`, `mise exec -- nub run lint`, and `mise exec --
 
 Use TypeScript for non-trivial logic and Astro components for UI. Follow Prettier’s existing formatting (two-space indentation, single quotes, and trailing commas where generated). Let Tailwind classes be ordered by the Prettier Tailwind plugin; do not hand-sort them.
 
+Prefer Flexbox layouts when possible. Follow these Tailwind UI conventions:
+
+- Use `text-5xl font-medium lg:text-6xl` for large titles.
+- Use `text-lg font-light text-slate-700 dark:text-slate-300 lg:text-xl` for subtitles.
+- Use Tailwind CSS Typography’s `prose` class for large blocks of text.
+
 Name components in PascalCase (`PostLayout.astro`), use Astro route files (`index.astro`, `[slug].astro`), and name utility modules in lowercase (`index.ts`). Keep post filenames URL-safe and lowercase, such as `hello.md`; include frontmatter with at least `title` and `date`.
 
 ## Commit & Pull Request Guidelines
