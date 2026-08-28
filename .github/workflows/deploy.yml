@@ -18,8 +18,8 @@ jobs:
       - uses: actions/checkout@v7
       - uses: nubjs/setup-nub@v0
         with:
+          nub-version: 0.7.5
           node-version: 26
-          cache: false
 
       - run: nub ci
       - run: nub run build
