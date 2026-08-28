@@ -19,6 +19,7 @@ jobs:
       - uses: nubjs/setup-nub@v0
         with:
           node-version: 26
+          cache: false
 
       - run: nub ci
       - run: nub run build
