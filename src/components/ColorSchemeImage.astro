@@ -4,10 +4,12 @@ interface Props {
   darkSrc: string;
   alt: string;
   class?: string;
+  width?: number;
+  height?: number;
 }
 
-const { lightSrc, darkSrc, alt, class: className } = Astro.props;
+const { lightSrc, darkSrc, alt, class: className, width, height } = Astro.props;
 ---
 
-<img src={lightSrc} alt={alt} class:list={["block dark:hidden", className]} />
-<img src={darkSrc} alt={alt} class:list={["hidden dark:block", className]} />
+<img src={lightSrc} alt={alt} class:list={["block dark:hidden", className]} width={width} height={height} />
+<img src={darkSrc} alt={alt} class:list={["hidden dark:block", className]} width={width} height={height} />
