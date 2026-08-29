@@ -11,11 +11,12 @@ interface Props {
   description?: string;
 }
 
-const { title = "Aaron212", description = "Aaron212's portfolio, projects, and blog." } = Astro.props;
+const { title = "Home", description = "Aaron212's portfolio, projects, and blog." } = Astro.props;
+const lang = Astro.currentLocale ?? "en";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.svg" />

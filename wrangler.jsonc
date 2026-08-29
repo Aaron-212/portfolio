@@ -1,0 +1,9 @@
+{
+  "name": "aaron212-portfolio",
+  "compatibility_date": "2026-08-29",
+  "assets": {
+    "directory": "./build",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

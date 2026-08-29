@@ -8,6 +8,13 @@ export default defineConfig({
   output: "static",
   outDir: "./build",
   publicDir: "./static",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "zh-cn"],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   integrations: [mdx(), icon()],
   vite: {
     plugins: [tailwindcss()]
