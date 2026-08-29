@@ -10,16 +10,16 @@ This is a static Astro portfolio built with TypeScript, Tailwind CSS, and MDX.
 
 ## Build, Test, and Development Commands
 
-The project targets Node 26 and uses `nub` (see `mise.toml` and `nub.lock`). Always execute `nub` through `mise` using the form `mise exec -- nub ...`; install dependencies with `mise exec -- nub install`.
+The project targets `node@26` and uses `pnpm@12` (see `mise.toml` and `pnpm-lock.yaml`). Always execute `pnpm` through `mise` using the form `mise exec -- pnpm ...`; install dependencies with `mise exec -- pnpm install`.
 
-- `mise exec -- nub run dev` starts the Astro development server.
-- `mise exec -- nub run check` runs Astro's type checks.
-- `mise exec -- nub run lint` checks Prettier formatting and ESLint rules.
-- `mise exec -- nub run format` applies Prettier formatting across the repository.
-- `mise exec -- nub run build` produces the static production site in `build/`.
-- `mise exec -- nub run preview` serves the production build locally.
+- `mise exec -- pnpm run dev` starts the Astro development server.
+- `mise exec -- pnpm run check` runs Astro's type checks.
+- `mise exec -- pnpm run lint` checks Prettier formatting and ESLint rules.
+- `mise exec -- pnpm run format` applies Prettier formatting across the repository.
+- `mise exec -- pnpm run build` produces the static production site in `build/`.
+- `mise exec -- pnpm run preview` serves the production build locally.
 
-Run `mise exec -- nub run check`, `mise exec -- nub run lint`, and `mise exec -- nub run build` before opening a pull request. There is no dedicated automated test suite yet; add focused tests when introducing logic that needs regression coverage.
+Run `mise exec -- pnpm run check`, `mise exec -- pnpm run lint`, and `mise exec -- pnpm run build` before opening a pull request. There is no dedicated automated test suite yet; add focused tests when introducing logic that needs regression coverage.
 
 ## Coding Style & Naming Conventions
 
@@ -35,6 +35,6 @@ Name components in PascalCase (`PostLayout.astro`), use Astro route files (`inde
 
 ## Commit & Pull Request Guidelines
 
-Recent history uses short, imperative, lowercase subjects such as `fix import`, `deploy test`, and `Migrate to nub.js`. Keep commits narrowly scoped and describe the user-visible change.
+Recent history uses short, imperative, lowercase subjects such as `fix import`, `deploy test`, and `Migrate to Astro.js`. Keep commits narrowly scoped and describe the user-visible change.
 
 Pull requests should summarize the change, link relevant issues when available, and include screenshots for visual changes. Confirm the validation commands above pass and avoid committing generated output (`build/` or `.astro/`).
