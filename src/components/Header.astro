@@ -5,8 +5,7 @@ const links = [
     href: "/",
     links: [
       { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Partner Links", href: "/partner-links" }
+      { label: "About", href: "/about" }
     ]
   },
   {
@@ -32,7 +31,10 @@ const links = [
 
 const rightLinks = {
   label: "Other Links",
-  links: [{ label: "CNBlogs", href: "https://www.cnblogs.com/Aaron212" }]
+  links: [
+    { label: "CNBlogs", href: "https://www.cnblogs.com/Aaron212" },
+    { label: "Partner Links", href: "/partner-links" }
+  ]
 };
 
 import { Icon } from "astro-icon/components";
@@ -78,15 +80,15 @@ import { Icon } from "astro-icon/components";
 
       <div class="flex items-center gap-4 lg:gap-6">
         <a href="https://x.com/AR___212" aria-label="Aaron212 on X">
-          <Icon name="fa7-brands:x-twitter" class="size-4" />
+          <Icon name="fa7-brands:x-twitter" class="size-5" />
         </a>
         <a href="https://github.com/Aaron-212" aria-label="Aaron212 on GitHub">
-          <Icon name="fa7-brands:github" class="size-4" />
+          <Icon name="fa7-brands:github" class="size-5" />
         </a>
 
         <details data-mobile-menu class="lg:hidden">
           <summary class="cursor-pointer list-none" aria-label="Toggle navigation menu">
-            <Icon name="fa7-solid:bars" class="size-4" />
+            <Icon name="fa7-solid:bars" class="size-5" />
           </summary>
           <div class="absolute top-12 left-1/2 flex w-full max-w-4xl -translate-x-1/2 flex-col gap-2 px-6 pt-8">
             {[...links, rightLinks].flatMap((link) => link.links.map((sublink) => (
