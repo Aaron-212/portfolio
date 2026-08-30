@@ -1,0 +1,16 @@
+---
+interface Props {
+  label: string;
+  href: string;
+}
+
+const { label, href } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex flex-row items-center">
+  <a href={href} class="text-lg text-blue-light dark:text-blue-dark hover:underline">
+    {label}
+  </a>
+  <Icon name="fa7-solid:chevron-right" class="size-4 text-blue-light dark:text-blue-dark" />
+</div>
