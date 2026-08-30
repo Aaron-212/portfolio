@@ -11,7 +11,7 @@ interface Props {
   description?: string;
 }
 
-const { title = "Home", description = "Aaron212's portfolio, projects, and blog." } = Astro.props;
+const { title, description = "Aaron212's portfolio, projects, and blog." } = Astro.props;
 const lang = Astro.currentLocale ?? "en";
 ---
 
@@ -24,7 +24,7 @@ const lang = Astro.currentLocale ?? "en";
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <meta name="description" content={description} />
-    <title>{title} | Aaron212</title>
+    <title>{title ? `${title} | Aaron212` : "Aaron212"}</title>
     <ClientRouter />
   </head>
   <body class="flex min-h-dvh flex-col bg-white text-black dark:bg-black dark:text-white">
