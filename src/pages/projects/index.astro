@@ -1,7 +1,7 @@
 ---
+import AppIcon from "@/components/AppIcon.astro";
 import ArrowButton from "@/components/ArrowButton.astro";
 import BranchTag from "@/components/BranchTag.astro";
-import ColorSchemeImage from "@/components/ColorSchemeImage.astro";
 import HeroButton from "@/components/HeroButton.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -46,11 +46,12 @@ const projects = [
     <div class="flex flex-col gap-8">
       {projects.map((project) => (
         <article class="flex flex-row gap-12 p-4">
-          <ColorSchemeImage
+          <AppIcon
             lightSrc={project.lightImage}
             darkSrc={project.darkImage}
             alt={`${project.name} app icon`}
             class="mb-6 size-32"
+            sizes="8rem"
           />
           <div class="flex flex-col gap-4 flex-1">
             <div class="flex items-center gap-4 flex-row">

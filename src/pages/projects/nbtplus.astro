@@ -1,17 +1,18 @@
 ---
+import AppIcon from "@/components/AppIcon.astro";
 import BranchTag from "@/components/BranchTag.astro";
-import ColorSchemeImage from "@/components/ColorSchemeImage.astro";
 import HeroButton from "@/components/HeroButton.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="NBTPlus">
   <div class="mx-auto flex max-w-3xl flex-col items-center px-6 py-12 text-center lg:py-20">
-    <ColorSchemeImage
+    <AppIcon
       lightSrc="https://images-bucket.ar212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png"
       darkSrc="https://images-bucket.ar212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png"
       alt="NBTPlus app icon"
       class="mb-8 w-48 lg:w-56"
+      sizes="(min-width: 64rem) 14rem, 12rem"
     />
     <div class="flex flex-wrap items-center justify-center gap-2">
       <h1 class="text-5xl font-medium lg:text-6xl">NBTPlus</h1>

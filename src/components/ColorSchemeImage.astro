@@ -1,17 +1,22 @@
 ---
-interface Props {
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends Omit<HTMLAttributes<"img">, "src" | "srcset"> {
   lightSrc: string;
   darkSrc: string;
-  alt: string;
-  class?: string;
-  width?: number;
-  height?: number;
+  lightSrcset?: string;
+  darkSrcset?: string;
+  pictureClass?: string;
 }
 
-const { lightSrc, darkSrc, alt, class: className, width, height } = Astro.props;
+const { lightSrc, darkSrc, lightSrcset, darkSrcset, pictureClass, ...imageAttributes } = Astro.props;
 ---
 
-<picture class={className}>
-  <img src={lightSrc} alt={alt} width={width} height={height} />
-  <source media="(prefers-color-scheme: dark)" srcset={darkSrc} />
+<picture class={pictureClass}>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset={darkSrcset ?? darkSrc}
+    sizes={darkSrcset ? imageAttributes.sizes : undefined}
+  />
+  <img {...imageAttributes} src={lightSrc} srcset={lightSrcset} />
 </picture>

@@ -1,6 +1,6 @@
 ---
+import AppIcon from "@/components/AppIcon.astro";
 import BranchTag from "@/components/BranchTag.astro";
-import ColorSchemeImage from "@/components/ColorSchemeImage.astro";
 import HeroButton from "@/components/HeroButton.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
@@ -9,13 +9,14 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
   <div class="flex flex-col gap-4">
     <div class="flex h-[72dvh] min-h-128 items-center justify-center bg-slate-50 px-4 dark:bg-slate-950">
       <div class="flex flex-col items-center gap-4">
-        <ColorSchemeImage
+        <AppIcon
           lightSrc="https://images-bucket.ar212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png"
           darkSrc="https://images-bucket.ar212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png"
           alt="McSrvrS App Icon"
           width={1024}
           height={1024}
           class="w-48 lg:w-64"
+          priority
         />
         <div class="flex items-center gap-2">
           <span class="text-5xl font-medium lg:text-6xl">McSrvrS</span>
@@ -31,7 +32,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     <div class="flex flex-col gap-4 lg:flex-row">
       <div class="flex h-[72dvh] min-h-128 items-center justify-center bg-slate-50 bg-linear-to-b lg:flex-1 dark:bg-slate-950">
         <div class="flex flex-col items-center gap-4">
-          <ColorSchemeImage
+          <AppIcon
             lightSrc="https://images-bucket.ar212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png"
             darkSrc="https://images-bucket.ar212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png"
             alt="FnPilot App Icon"
@@ -53,7 +54,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
       <div class="flex h-[72dvh] min-h-128 items-center justify-center bg-slate-50 bg-linear-to-b to-75% lg:flex-1 dark:bg-slate-950">
         <div class="flex flex-col items-center gap-4">
-          <ColorSchemeImage
+          <AppIcon
             lightSrc="https://images-bucket.ar212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png"
             darkSrc="https://images-bucket.ar212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png"
             alt="NBTPlus App Icon"

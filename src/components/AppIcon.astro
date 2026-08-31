@@ -1,0 +1,53 @@
+---
+import ColorSchemeImage from "@/components/ColorSchemeImage.astro";
+
+interface Props {
+  lightSrc: string;
+  darkSrc: string;
+  alt: string;
+  class?: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
+  priority?: boolean;
+}
+
+const {
+  lightSrc,
+  darkSrc,
+  alt,
+  class: className,
+  width = 1024,
+  height = 1024,
+  sizes = "(min-width: 64rem) 16rem, 12rem",
+  priority = false
+} = Astro.props;
+
+const responsiveWidths = [192, 384, 512, 768];
+const fallbackWidth = 512;
+
+function transformedImageUrl(src: string, transformedWidth: number) {
+  const url = new URL(src);
+
+  return `${url.origin}/cdn-cgi/image/format=auto,quality=medium-high,width=${transformedWidth}${url.pathname}${url.search}`;
+}
+
+function transformedSrcset(src: string) {
+  return responsiveWidths.map((responsiveWidth) => `${transformedImageUrl(src, responsiveWidth)} ${responsiveWidth}w`)
+    .join(", ");
+}
+---
+
+<ColorSchemeImage
+  lightSrc={transformedImageUrl(lightSrc, fallbackWidth)}
+  darkSrc={transformedImageUrl(darkSrc, fallbackWidth)}
+  lightSrcset={transformedSrcset(lightSrc)}
+  darkSrcset={transformedSrcset(darkSrc)}
+  {sizes}
+  {alt}
+  class={className}
+  {width}
+  {height}
+  loading={priority ? "eager" : undefined}
+  fetchpriority={priority ? "high" : undefined}
+/>
