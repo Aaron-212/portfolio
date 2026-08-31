@@ -11,5 +11,7 @@ interface Props {
 const { lightSrc, darkSrc, alt, class: className, width, height } = Astro.props;
 ---
 
-<img src={lightSrc} alt={alt} class:list={["block dark:hidden", className]} width={width} height={height} />
-<img src={darkSrc} alt={alt} class:list={["hidden dark:block", className]} width={width} height={height} />
+<picture class={className}>
+  <img src={lightSrc} alt={alt} width={width} height={height} />
+  <source media="(prefers-color-scheme: dark)" srcset={darkSrc} />
+</picture>
