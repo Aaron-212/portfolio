@@ -5,7 +5,7 @@ import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://ar212.com",
+  site: "https://aaron212.com",
   output: "static",
   outDir: "./build",
   publicDir: "./static",
