@@ -10,16 +10,16 @@ This is a static Astro portfolio built with TypeScript, Tailwind CSS, and MDX.
 
 ## Build, Test, and Development Commands
 
-The project targets `node@26` and uses `pnpm@12` (see `mise.toml` and `pnpm-lock.yaml`). Always execute `pnpm` through `mise` using the form `mise exec -- pnpm ...`; install dependencies with `mise exec -- pnpm install`.
+The project targets `node@26` and uses `aube@2.2.0` (see `mise.toml`). Always execute `aube`, `aubr` (for package scripts written in package.json) and `aubx` (for tooling) through `mise` using the form `mise exec -- aube ...`; install dependencies with `mise exec -- aube install`.
 
-- `mise exec -- pnpm run dev` starts the Astro development server.
-- `mise exec -- pnpm run check` runs Astro's type checks.
-- `mise exec -- pnpm run lint` checks Prettier formatting and ESLint rules.
-- `mise exec -- pnpm run format` applies Prettier formatting across the repository.
-- `mise exec -- pnpm run build` produces the static production site in `build/`.
-- `mise exec -- pnpm run preview` serves the production build locally.
+- `mise exec -- aubr dev` starts the Astro development server.
+- `mise exec -- aubr check` runs Astro's type checks.
+- `mise exec -- aubr lint` checks Prettier formatting and ESLint rules.
+- `mise exec -- aubr format` applies Prettier formatting across the repository.
+- `mise exec -- aubr build` produces the static production site in `build/`.
+- `mise exec -- aubr preview` serves the production build locally.
 
-Run `mise exec -- pnpm run check`, `mise exec -- pnpm run lint`, and `mise exec -- pnpm run build` before opening a pull request. There is no dedicated automated test suite yet; add focused tests when introducing logic that needs regression coverage.
+Run `mise exec -- aubr check`, `mise exec -- aubr lint`, and `mise exec -- aubr build` before opening a pull request. There is no dedicated automated test suite yet; add focused tests when introducing logic that needs regression coverage.
 
 ## Coding Style & Naming Conventions
 
