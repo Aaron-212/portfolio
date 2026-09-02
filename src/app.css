@@ -3,7 +3,13 @@
 
 :root {
   @apply bg-white text-black dark:bg-black dark:text-white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, ui-sans, "Segoe UI", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    ui-sans,
+    "Segoe UI",
+    sans-serif;
   text-autospace: normal;
 }
 
@@ -11,11 +17,13 @@
   @apply rounded bg-slate-100 px-1 py-0.5 dark:bg-slate-900;
 }
 
-.prose code::before, .prose code::after {
+.prose code::before,
+.prose code::after {
   content: none;
 }
 
-.astro-code, .astro-code span {
+.astro-code,
+.astro-code span {
   background-color: var(--color-slate-100) !important;
 }
 

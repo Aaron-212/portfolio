@@ -14,8 +14,8 @@ The project targets `node@26` and uses `aube@2.2.0` (see `mise.toml`). Always ex
 
 - `mise exec -- aubr dev` starts the Astro development server.
 - `mise exec -- aubr check` runs Astro's type checks.
-- `mise exec -- aubr lint` checks Prettier formatting and ESLint rules.
-- `mise exec -- aubr format` applies Prettier formatting across the repository.
+- `mise exec -- aubr lint` checks oxfmt formatting and Oxlint rules.
+- `mise exec -- aubr format` applies oxfmt formatting across the repository.
 - `mise exec -- aubr build` produces the static production site in `build/`.
 - `mise exec -- aubr preview` serves the production build locally.
 
@@ -23,7 +23,7 @@ Run `mise exec -- aubr check`, `mise exec -- aubr lint`, and `mise exec -- aubr 
 
 ## Coding Style & Naming Conventions
 
-Use TypeScript for non-trivial logic and Astro components for UI. Follow Prettier’s existing formatting (two-space indentation, single quotes, and trailing commas where generated). Let Tailwind classes be ordered by the Prettier Tailwind plugin; do not hand-sort them.
+Use TypeScript for non-trivial logic and Astro components for UI. Follow oxfmt’s existing formatting (two-space indentation, double quotes, and no trailing commas).
 
 Prefer Flexbox layouts when possible. Follow these Tailwind UI conventions:
 
