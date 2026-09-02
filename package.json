@@ -11,25 +11,21 @@
     "check": "astro check",
     "check:watch": "astro check --watch",
     "format": "dprint fmt",
-    "lint": "dprint check && eslint ."
+    "lint": "dprint check && oxlint ."
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/mdx": "^7.0.8",
     "@astrojs/sitemap": "^3.7.3",
-    "@eslint/compat": "^1.4.1",
-    "@eslint/js": "^9.39.5",
     "@iconify-json/fa7-brands": "^1.2.4",
     "@iconify-json/fa7-solid": "^1.2.5",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.9",
     "dprint": "^0.56.1",
-    "eslint": "^10.9.1",
-    "globals": "^16.5.0",
+    "oxlint": "^1.80.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
-    "typescript-eslint": "^8.68.0",
     "wrangler": "^4.127.1"
   },
   "dependencies": {
