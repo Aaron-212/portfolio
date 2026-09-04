@@ -23,6 +23,7 @@ const lang = Astro.currentLocale ?? "en";
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <meta name="description" content={description} />
     <title>{title ? `${title} | Aaron212` : "Aaron212"}</title>
+    <slot name="head" />
     <ClientRouter />
   </head>
   <body class="flex min-h-dvh flex-col bg-white text-black dark:bg-black dark:text-white">
