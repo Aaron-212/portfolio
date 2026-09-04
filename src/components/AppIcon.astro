@@ -33,7 +33,8 @@ function transformedImageUrl(src: string, transformedWidth: number) {
 }
 
 function transformedSrcset(src: string) {
-  return responsiveWidths.map((responsiveWidth) => `${transformedImageUrl(src, responsiveWidth)} ${responsiveWidth}w`)
+  return responsiveWidths
+    .map((responsiveWidth) => `${transformedImageUrl(src, responsiveWidth)} ${responsiveWidth}w`)
     .join(", ");
 }
 ---

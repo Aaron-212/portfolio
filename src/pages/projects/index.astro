@@ -2,7 +2,6 @@
 import AppIcon from "@/components/AppIcon.astro";
 import ArrowButton from "@/components/ArrowButton.astro";
 import BranchTag from "@/components/BranchTag.astro";
-import HeroButton from "@/components/HeroButton.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const projects = [
@@ -44,29 +43,31 @@ const projects = [
     <h1 class="mb-10 text-center text-4xl font-semibold tracking-tight lg:text-5xl">Projects</h1>
 
     <div class="flex flex-col gap-8">
-      {projects.map((project) => (
-        <article class="flex flex-row gap-12 p-4">
-          <AppIcon
-            lightSrc={project.lightImage}
-            darkSrc={project.darkImage}
-            alt={`${project.name} app icon`}
-            class="mb-6 size-32"
-            sizes="8rem"
-          />
-          <div class="flex flex-col gap-4 flex-1">
-            <div class="flex items-center gap-4 flex-row">
-              <h2 class="text-4xl font-medium">{project.name}</h2>
-              <BranchTag name={project.status} tone={project.tone} />
+      {
+        projects.map((project) => (
+          <article class="flex flex-row gap-12 p-4">
+            <AppIcon
+              lightSrc={project.lightImage}
+              darkSrc={project.darkImage}
+              alt={`${project.name} app icon`}
+              class="mb-6 size-32"
+              sizes="8rem"
+            />
+            <div class="flex flex-col gap-4 flex-1">
+              <div class="flex items-center gap-4 flex-row">
+                <h2 class="text-4xl font-medium">{project.name}</h2>
+                <BranchTag name={project.status} tone={project.tone} />
+              </div>
+              <p class="text-lg text-slate-700 dark:text-slate-300">{project.description}</p>
+              <div class="flex flex-col flex-wrap items-start">
+                <ArrowButton label="Learn More" href={`/projects/${project.slug}`} />
+                <ArrowButton label="GitHub" href={project.github} />
+              </div>
+              <hr class="border mt-4" />
             </div>
-            <p class="text-lg text-slate-700 dark:text-slate-300">{project.description}</p>
-            <div class="flex flex-col flex-wrap items-start">
-              <ArrowButton label="Learn More" href={`/projects/${project.slug}`} />
-              <ArrowButton label="GitHub" href={project.github} />
-            </div>
-            <hr class="border mt-4" />
-          </div>
-        </article>
-      ))}
+          </article>
+        ))
+      }
     </div>
   </div>
 </BaseLayout>

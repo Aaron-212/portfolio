@@ -1,0 +1,6 @@
+**/*.*
+!**/*.astro
+
+**/.astro/**
+**/build/**
+**/node_modules/**
