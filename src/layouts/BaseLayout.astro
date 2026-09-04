@@ -1,6 +1,8 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import { m } from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 import { ClientRouter } from "astro:transitions";
 import "@/app.css";
 
@@ -9,8 +11,8 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Aaron212's portfolio, projects, and blog." } = Astro.props;
-const lang = Astro.currentLocale ?? "en";
+const { title, description = m.metaDescription() } = Astro.props;
+const lang = getLocale();
 ---
 
 <!doctype html>

@@ -1,6 +1,7 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
+import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import icon from "astro-icon";
 import mermaid from "astro-mermaid";
 import { defineConfig } from "astro/config";
@@ -26,7 +27,24 @@ export default defineConfig({
     icon()
   ],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [
+      paraglideVitePlugin({
+        project: "./project.inlang",
+        outdir: "./src/paraglide",
+        emitTsDeclarations: false,
+        strategy: ["url", "globalVariable", "baseLocale"],
+        urlPatterns: [
+          {
+            pattern: "/:path(.*)?",
+            localized: [
+              ["en", "/:path(.*)?"],
+              ["zh-cn", "/zh-cn/:path(.*)?"]
+            ]
+          }
+        ]
+      }),
+      tailwindcss()
+    ]
   },
   markdown: {
     shikiConfig: {

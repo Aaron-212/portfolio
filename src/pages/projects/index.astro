@@ -1,61 +1,63 @@
 ---
 import ShowcaseItem from "@/components/ShowcaseItem.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { m } from "@/paraglide/messages.js";
+import { localizeHref } from "@/paraglide/runtime.js";
 ---
 
-<BaseLayout title="Projects">
+<BaseLayout title={m.navProjects()}>
   <div class="mx-auto max-w-6xl px-6 py-12 lg:py-20">
-    <h1 class="mb-10 text-center text-4xl font-semibold tracking-tight lg:text-5xl">Projects</h1>
+    <h1 class="mb-10 text-center text-4xl font-semibold tracking-tight lg:text-5xl">{m.navProjects()}</h1>
 
     <div class="flex flex-col md:gap-4">
       <ShowcaseItem
         title="McSrvrS"
-        description="A native Minecraft: Java Edition server monitor for iPhone, iPad, and Mac."
+        description={m.mcsrvrsDescription()}
         icon={{
           lightSrc: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png",
           darkSrc: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png",
-          alt: "McSrvrS app icon"
+          alt: m.appIconAlt({ name: "McSrvrS" })
         }}
         tag={{ name: "Alpha", tone: "mint" }}
         actions={[
-          { label: "Learn More", href: "/projects/mcsrvrs" },
+          { label: m.learnMore(), href: localizeHref("/projects/mcsrvrs") },
           { label: "GitHub", href: "https://github.com/Aaron-212/McSrvrS" }
         ]}
       />
 
       <ShowcaseItem
         title="FnPilot"
-        description="Change fn key settings based on the frontmost window."
+        description={m.fnpilotDescription()}
         icon={{
           lightSrc: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png",
           darkSrc: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png",
-          alt: "FnPilot app icon"
+          alt: m.appIconAlt({ name: "FnPilot" })
         }}
         tag={{ name: "Alpha", tone: "mint" }}
         actions={[
-          { label: "Learn More", href: "/projects/fnpilot" },
+          { label: m.learnMore(), href: localizeHref("/projects/fnpilot") },
           { label: "GitHub", href: "https://github.com/Aaron-212/FnPilot" }
         ]}
       />
 
       <ShowcaseItem
         title="NBTPlus"
-        description="A simple NBT editor for macOS."
+        description={m.nbtplusDescription()}
         icon={{
           lightSrc: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png",
           darkSrc: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png",
-          alt: "NBTPlus app icon"
+          alt: m.appIconAlt({ name: "NBTPlus" })
         }}
         tag={{ name: "Dev", tone: "purple" }}
         actions={[
-          { label: "Learn More", href: "/projects/nbtplus" },
+          { label: m.learnMore(), href: localizeHref("/projects/nbtplus") },
           { label: "GitHub", href: "https://github.com/Aaron-212/NBTPlus" }
         ]}
       />
 
       <ShowcaseItem
         title="CF Senders"
-        description="Send email via Cloudflare Workers."
+        description={m.cfSendersDescription()}
         actions={[{ label: "GitHub", href: "https://github.com/Aaron-212/cf-senders" }]}
       />
     </div>

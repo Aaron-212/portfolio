@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { m } from "@/paraglide/messages.js";
 ---
 
-<BaseLayout title="About me">
+<BaseLayout title={m.aboutTitle()}>
   <article class="prose mx-auto my-8 max-w-3xl px-6 select-auto dark:prose-invert lg:prose-xl">
-    <h1>Hello</h1>
+    <h1>{m.aboutGreeting()}</h1>
   </article>
 </BaseLayout>

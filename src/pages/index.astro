@@ -3,6 +3,8 @@ import AppIcon from "@/components/AppIcon.astro";
 import BranchTag from "@/components/BranchTag.astro";
 import HeroButton from "@/components/HeroButton.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { m } from "@/paraglide/messages.js";
+import { localizeHref } from "@/paraglide/runtime.js";
 ---
 
 <BaseLayout>
@@ -12,7 +14,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         <AppIcon
           lightSrc="https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png"
           darkSrc="https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png"
-          alt="McSrvrS App Icon"
+          alt={m.appIconAlt({ name: "McSrvrS" })}
           width={1024}
           height={1024}
           class="w-48 lg:w-64"
@@ -22,10 +24,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           <span class="text-5xl font-medium lg:text-6xl">McSrvrS</span>
           <BranchTag name="Alpha" tone="mint" />
         </div>
-        <span class="text-center text-lg font-light lg:text-2xl">Check your Minecraft Server's status on the go.</span>
+        <span class="text-center text-lg font-light lg:text-2xl">{m.mcsrvrsTagline()}</span>
         <div class="flex items-center gap-4">
-          <HeroButton label="Learn More" href="/projects/mcsrvrs" variant="primary" />
-          <HeroButton label="Check it on GitHub" href="https://github.com/Aaron-212/McSrvrS" variant="secondary" />
+          <HeroButton label={m.learnMore()} href={localizeHref("/projects/mcsrvrs")} variant="primary" />
+          <HeroButton label={m.checkOnGithub()} href="https://github.com/Aaron-212/McSrvrS" variant="secondary" />
         </div>
       </div>
     </div>
@@ -37,7 +39,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           <AppIcon
             lightSrc="https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png"
             darkSrc="https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png"
-            alt="FnPilot App Icon"
+            alt={m.appIconAlt({ name: "FnPilot" })}
             width={1024}
             height={1024}
             class="w-48 lg:w-64"
@@ -46,12 +48,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
             <span class="text-5xl font-medium lg:text-6xl">FnPilot</span>
             <BranchTag name="Alpha" tone="mint" />
           </div>
-          <span class="text-center text-lg font-light lg:text-2xl"
-            >Change fn key settings based on frontmost window.
-          </span>
+          <span class="text-center text-lg font-light lg:text-2xl">{m.fnpilotDescription()}</span>
           <div class="flex items-center gap-4">
-            <HeroButton label="Learn More" href="/projects/fnpilot" variant="primary" />
-            <HeroButton label="Check it on GitHub" href="https://github.com/Aaron-212/FnPilot" variant="secondary" />
+            <HeroButton label={m.learnMore()} href={localizeHref("/projects/fnpilot")} variant="primary" />
+            <HeroButton label={m.checkOnGithub()} href="https://github.com/Aaron-212/FnPilot" variant="secondary" />
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           <AppIcon
             lightSrc="https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png"
             darkSrc="https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png"
-            alt="NBTPlus App Icon"
+            alt={m.appIconAlt({ name: "NBTPlus" })}
             width={1024}
             height={1024}
             class="w-48 lg:w-64"
@@ -71,16 +71,16 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
             <span class="text-5xl font-medium lg:text-6xl">NBTPlus</span>
             <BranchTag name="Dev" tone="purple" />
           </div>
-          <span class="text-center text-lg font-light lg:text-2xl">Simple NBT editor on macOS.</span>
+          <span class="text-center text-lg font-light lg:text-2xl">{m.nbtplusDescription()}</span>
           <div class="flex items-center gap-4">
-            <HeroButton label="Learn More" href="/projects/nbtplus" variant="primary" />
-            <HeroButton label="Check it on GitHub" href="https://github.com/Aaron-212/NBTPlus" variant="secondary" />
+            <HeroButton label={m.learnMore()} href={localizeHref("/projects/nbtplus")} variant="primary" />
+            <HeroButton label={m.checkOnGithub()} href="https://github.com/Aaron-212/NBTPlus" variant="secondary" />
           </div>
         </div>
       </div>
     </div>
     <div class="flex h-[72dvh] min-h-128 items-center justify-center bg-slate-200 dark:bg-slate-800">
-      <div>Under Construction...</div>
+      <div>{m.underConstruction()}</div>
     </div>
   </div>
 </BaseLayout>

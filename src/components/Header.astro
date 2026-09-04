@@ -12,36 +12,45 @@ type LinkGroup = Link & {
   links: Sublink[];
 };
 
+import { m } from "@/paraglide/messages.js";
+import { localizeHref } from "@/paraglide/runtime.js";
+
 const links: LinkGroup[] = [
   {
-    label: "Home",
-    href: "/",
-    links: [{ label: "About", href: "/about", showOnMobile: true }]
+    label: m.navHome(),
+    href: localizeHref("/"),
+    links: [{ label: m.navAbout(), href: localizeHref("/about"), showOnMobile: true }]
   },
   {
-    label: "Projects",
-    href: "/projects",
+    label: m.navProjects(),
+    href: localizeHref("/projects"),
     links: [
-      { label: "McSrvrS", href: "/projects/mcsrvrs" },
-      { label: "FnPilot", href: "/projects/fnpilot" },
-      { label: "NBTPlus", href: "/projects/nbtplus" }
+      { label: "McSrvrS", href: localizeHref("/projects/mcsrvrs") },
+      { label: "FnPilot", href: localizeHref("/projects/fnpilot") },
+      { label: "NBTPlus", href: localizeHref("/projects/nbtplus") }
     ]
   },
   {
-    label: "Blog",
-    href: "/blog",
-    links: [{ label: "Hello", href: "#" }]
+    label: m.navBlog(),
+    href: localizeHref("/blog"),
+    links: [{ label: m.navHello(), href: "#" }]
   },
   {
-    label: "Docs",
-    href: "/docs",
-    links: [{ label: "Hello", href: "#" }]
+    label: m.navDocs(),
+    href: localizeHref("/docs"),
+    links: [{ label: m.navHello(), href: "#" }]
   }
 ];
 
 const rightLinks = {
-  label: "Other Links",
-  links: [{ label: "Partner Links", href: "/partner-links", showOnMobile: true }] satisfies Sublink[]
+  label: m.navOtherLinks(),
+  links: [
+    {
+      label: m.navPartnerLinks(),
+      href: localizeHref("/partner-links"),
+      showOnMobile: true
+    }
+  ] satisfies Sublink[]
 };
 
 const mobileLinks = [
@@ -55,7 +64,7 @@ import { Icon } from "astro-icon/components";
 <header data-site-header class="pointer-events-none sticky top-0 z-50 h-12 select-none">
   <nav
     data-navigation
-    aria-label="Main navigation"
+    aria-label={m.ariaMainNavigation()}
     class="pointer-events-auto relative flex h-12 w-full flex-col items-center overflow-clip bg-slate-50/80 backdrop-blur-xl transition-all duration-250 ease-in-out motion-reduce:transition-none lg:delay-250 dark:bg-slate-950/80"
   >
     <div class="mx-auto flex h-12 w-full max-w-4xl shrink-0 items-center gap-4 px-6">
@@ -93,15 +102,15 @@ import { Icon } from "astro-icon/components";
       <div class="grow"><!-- Spacer --></div>
 
       <div class="flex items-center gap-4 lg:gap-6">
-        <a href="https://x.com/AR___212" aria-label="Aaron212 on X">
+        <a href="https://x.com/AR___212" aria-label={m.ariaXProfile()}>
           <Icon name="fa7-brands:x-twitter" class="size-5" />
         </a>
-        <a href="https://github.com/Aaron-212" aria-label="Aaron212 on GitHub">
+        <a href="https://github.com/Aaron-212" aria-label={m.ariaGithubProfile()}>
           <Icon name="fa7-brands:github" class="size-5" />
         </a>
 
         <details data-mobile-menu class="lg:hidden">
-          <summary class="cursor-pointer list-none" aria-label="Toggle navigation menu">
+          <summary class="cursor-pointer list-none" aria-label={m.ariaToggleNavigation()}>
             <Icon name="fa7-solid:bars" class="size-5" />
           </summary>
           <div class="absolute top-12 left-1/2 flex w-full max-w-4xl -translate-x-1/2 flex-col gap-2 px-6 pt-8">
