@@ -41,15 +41,18 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
             class="not-prose hidden rounded-lg border border-slate-200 p-5 dark:border-slate-800 lg:sticky lg:top-24 lg:block lg:max-h-[calc(100dvh-6rem)] lg:w-64 lg:flex-none lg:overflow-y-auto"
           >
             <p class="mb-3 text-sm font-semibold uppercase tracking-wide">On this page</p>
-            <ol class="space-y-2 border-l border-blue-light/60 text-sm dark:border-blue-dark/60">
+            <ol class="text-sm">
               {tableOfContents.map(({ depth, slug, text }) => (
                 <li
-                  class={`group border-s-0 text-black/60 transition-all aria-[current=location]:border-s-2 aria-[current=location]:text-blue-light dark:text-white/60 dark:aria-[current=location]:text-blue-dark ${
+                  class={`py-1 group border-s-2 border-s-black/20 dark:border-s-white/20 text-black/60 transition-color aria-[current=location]:text-blue-light dark:text-white/60 dark:aria-[current=location]:text-blue-dark aria-[current=location]:border-s-blue-light dark:aria-[current=location]:border-s-blue-dark hover:text-black dark:hover:text-white ${
                     depth === 3 ? "ps-8" : "ps-4"
                   }`}
                   data-toc-item
                 >
-                  <a class="block text-inherit group-aria-[current=location]:font-semibold" href={`#${slug}`}>
+                  <a
+                    class="block text-inherit transition-all group-aria-[current=location]:font-semibold line-clamp-2"
+                    href={`#${slug}`}
+                  >
                     {text}
                   </a>
                 </li>
