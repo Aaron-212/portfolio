@@ -1,12 +1,22 @@
 ---
-const links = [
+type Link = {
+  label: string;
+  href: string;
+};
+
+type Sublink = Link & {
+  showOnMobile?: boolean;
+};
+
+type LinkGroup = Link & {
+  links: Sublink[];
+};
+
+const links: LinkGroup[] = [
   {
     label: "Home",
     href: "/",
-    links: [
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" }
-    ]
+    links: [{ label: "About", href: "/about", showOnMobile: true }]
   },
   {
     label: "Projects",
@@ -32,10 +42,15 @@ const links = [
 const rightLinks = {
   label: "Other Links",
   links: [
-    { label: "CNBlogs", href: "https://www.cnblogs.com/Aaron212" },
-    { label: "Partner Links", href: "/partner-links" }
-  ]
+    { label: "CNBlogs", href: "https://www.cnblogs.com/Aaron212", showOnMobile: true },
+    { label: "Partner Links", href: "/partner-links", showOnMobile: true }
+  ] satisfies Sublink[]
 };
+
+const mobileLinks = [
+  ...links.flatMap(({ label, href, links }) => [{ label, href }, ...links.filter(({ showOnMobile }) => showOnMobile)]),
+  ...rightLinks.links.filter(({ showOnMobile }) => showOnMobile)
+];
 
 import { Icon } from "astro-icon/components";
 ---
@@ -94,16 +109,14 @@ import { Icon } from "astro-icon/components";
           </summary>
           <div class="absolute top-12 left-1/2 flex w-full max-w-4xl -translate-x-1/2 flex-col gap-2 px-6 pt-8">
             {
-              [...links, rightLinks].flatMap((link) =>
-                link.links.map((sublink) => (
-                  <a
-                    class="text-2xl font-bold text-black transition-colors duration-200 ease-in-out hover:text-blue-light focus-visible:text-blue-light dark:text-white dark:hover:text-blue-dark dark:focus-visible:text-blue-dark"
-                    href={sublink.href}
-                  >
-                    {sublink.label}
-                  </a>
-                ))
-              )
+              mobileLinks.map((link) => (
+                <a
+                  class="text-2xl font-bold text-black transition-colors duration-200 ease-in-out hover:text-blue-light focus-visible:text-blue-light dark:text-white dark:hover:text-blue-dark dark:focus-visible:text-blue-dark"
+                  href={link.href}
+                >
+                  {link.label}
+                </a>
+              ))
             }
           </div>
         </details>
