@@ -1,73 +1,63 @@
 ---
-import AppIcon from "@/components/AppIcon.astro";
-import ArrowButton from "@/components/ArrowButton.astro";
-import BranchTag from "@/components/BranchTag.astro";
+import ShowcaseItem from "@/components/ShowcaseItem.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-
-const projects = [
-  {
-    name: "McSrvrS",
-    slug: "mcsrvrs",
-    status: "Alpha",
-    tone: "mint",
-    description: "A native Minecraft: Java Edition server monitor for iPhone, iPad, and Mac.",
-    lightImage: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png",
-    darkImage: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png",
-    github: "https://github.com/Aaron-212/McSrvrS"
-  },
-  {
-    name: "FnPilot",
-    slug: "fnpilot",
-    status: "Alpha",
-    tone: "mint",
-    description: "Change fn key settings based on the frontmost window.",
-    lightImage: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png",
-    darkImage: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png",
-    github: "https://github.com/Aaron-212/FnPilot"
-  },
-  {
-    name: "NBTPlus",
-    slug: "nbtplus",
-    status: "Dev",
-    tone: "purple",
-    description: "A simple NBT editor for macOS.",
-    lightImage: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png",
-    darkImage: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png",
-    github: "https://github.com/Aaron-212/NBTPlus"
-  }
-] as const;
 ---
 
 <BaseLayout title="Projects">
-  <div class="mx-auto max-w-6xl px-6 py-12 lg:py-20">
+  <div class="mx-auto max-w-4xl px-6 py-12 lg:py-20">
     <h1 class="mb-10 text-center text-4xl font-semibold tracking-tight lg:text-5xl">Projects</h1>
 
     <div class="flex flex-col gap-8">
-      {
-        projects.map((project) => (
-          <article class="flex flex-row gap-12 p-4">
-            <AppIcon
-              lightSrc={project.lightImage}
-              darkSrc={project.darkImage}
-              alt={`${project.name} app icon`}
-              class="mb-6 size-32"
-              sizes="8rem"
-            />
-            <div class="flex flex-col gap-4 flex-1">
-              <div class="flex items-center gap-4 flex-row">
-                <h2 class="text-4xl font-medium">{project.name}</h2>
-                <BranchTag name={project.status} tone={project.tone} />
-              </div>
-              <p class="text-lg text-slate-700 dark:text-slate-300">{project.description}</p>
-              <div class="flex flex-col flex-wrap items-start">
-                <ArrowButton label="Learn More" href={`/projects/${project.slug}`} />
-                <ArrowButton label="GitHub" href={project.github} />
-              </div>
-              <hr class="border mt-4" />
-            </div>
-          </article>
-        ))
-      }
+      <ShowcaseItem
+        title="McSrvrS"
+        description="A native Minecraft: Java Edition server monitor for iPhone, iPad, and Mac."
+        icon={{
+          lightSrc: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png",
+          darkSrc: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png",
+          alt: "McSrvrS app icon"
+        }}
+        tag={{ name: "Alpha", tone: "mint" }}
+        actions={[
+          { label: "Learn More", href: "/projects/mcsrvrs" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/McSrvrS" }
+        ]}
+      />
+
+      <ShowcaseItem
+        title="FnPilot"
+        description="Change fn key settings based on the frontmost window."
+        icon={{
+          lightSrc: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png",
+          darkSrc: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png",
+          alt: "FnPilot app icon"
+        }}
+        tag={{ name: "Alpha", tone: "mint" }}
+        actions={[
+          { label: "Learn More", href: "/projects/fnpilot" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/FnPilot" }
+        ]}
+      />
+
+      <ShowcaseItem
+        title="NBTPlus"
+        description="A simple NBT editor for macOS."
+        icon={{
+          lightSrc: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png",
+          darkSrc: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png",
+          alt: "NBTPlus app icon"
+        }}
+        tag={{ name: "Dev", tone: "purple" }}
+        actions={[
+          { label: "Learn More", href: "/projects/nbtplus" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/NBTPlus" }
+        ]}
+      />
+
+      <ShowcaseItem
+        title="CF Senders"
+        description="Send email via Cloudflare Workers."
+        actions={[{ label: "GitHub", href: "https://github.com/Aaron-212/cf-senders" }]}
+      />
     </div>
   </div>
 </BaseLayout>
