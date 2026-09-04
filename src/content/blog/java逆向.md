@@ -19,11 +19,11 @@ date: 2025-02-24 23:18
 
 ### 运行结果
 
-![主页](https://images.aaron212.com/portfolio/blog/2025/3605244-20250224223915329-457844731.png)
-![添加学生](https://images.aaron212.com/portfolio/blog/2025/3605244-20250224223946841-546949953.png)
-![学生](https://images.aaron212.com/portfolio/blog/2025/3605244-20250224224007683-104381144.png)
-![添加成绩](https://images.aaron212.com/portfolio/blog/2025/3605244-20250224224019533-475535469.png)
-![成绩信息](https://images.aaron212.com/portfolio/blog/2025/3605244-20250224224032431-862429349.png)
+![主页](https://images-bucket.aaron212.com/portfolio/blog/2025/3605244-20250224223915329-457844731.png)
+![添加学生](https://images-bucket.aaron212.com/portfolio/blog/2025/3605244-20250224223946841-546949953.png)
+![学生](https://images-bucket.aaron212.com/portfolio/blog/2025/3605244-20250224224007683-104381144.png)
+![添加成绩](https://images-bucket.aaron212.com/portfolio/blog/2025/3605244-20250224224019533-475535469.png)
+![成绩信息](https://images-bucket.aaron212.com/portfolio/blog/2025/3605244-20250224224032431-862429349.png)
 
 ### 主要问题
 
@@ -673,9 +673,9 @@ public class Student implements Serializable {
 
 ### 重构结果
 
-![绩点](https://images.aaron212.com/portfolio/blog/2025/3605244-20250224224644332-943274280.png)
-![重复学生](https://images.aaron212.com/portfolio/blog/2025/3605244-20250224224720158-1889445452.png)
-![重复成绩](https://images.aaron212.com/portfolio/blog/2025/3605244-20250224230317134-39207393.png)
+![绩点](https://images-bucket.aaron212.com/portfolio/blog/2025/3605244-20250224224644332-943274280.png)
+![重复学生](https://images-bucket.aaron212.com/portfolio/blog/2025/3605244-20250224224720158-1889445452.png)
+![重复成绩](https://images-bucket.aaron212.com/portfolio/blog/2025/3605244-20250224230317134-39207393.png)
 
 ## 总结
 
