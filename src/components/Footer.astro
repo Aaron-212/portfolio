@@ -1,13 +1,11 @@
 ---
 import { m } from "@/paraglide/messages.js";
-import { getLocale, localizeHref } from "@/paraglide/runtime.js";
+import { deLocalizeHref, getLocale, localizeHref } from "@/paraglide/runtime.js";
 import { Icon } from "astro-icon/components";
 
 const year = new Date().getFullYear();
 const currentLocale = getLocale();
-const basePathname =
-  currentLocale === "zh-cn" ? Astro.url.pathname.replace(/^\/zh-cn(?=\/|$)/, "") || "/" : Astro.url.pathname;
-const baseHref = `${basePathname}${Astro.url.search}`;
+const baseHref = deLocalizeHref(`${Astro.url.pathname}${Astro.url.search}`);
 const localeOptions = [
   { locale: "en", label: "English" },
   { locale: "zh-cn", label: "简体中文" }

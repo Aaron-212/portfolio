@@ -5,6 +5,7 @@ import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import icon from "astro-icon";
 import mermaid from "astro-mermaid";
 import { defineConfig } from "astro/config";
+import { baseLocale, locales } from "./i18n.config";
 
 export default defineConfig({
   site: "https://aaron212.com",
@@ -12,8 +13,8 @@ export default defineConfig({
   outDir: "./build",
   publicDir: "./static",
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "zh-cn"],
+    defaultLocale: baseLocale,
+    locales,
     routing: {
       prefixDefaultLocale: false
     }
@@ -23,7 +24,9 @@ export default defineConfig({
     mermaid({
       autoTheme: true
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => !new URL(page).pathname.endsWith("/404/")
+    }),
     icon()
   ],
   vite: {
@@ -33,15 +36,7 @@ export default defineConfig({
         outdir: "./src/paraglide",
         emitTsDeclarations: false,
         strategy: ["url", "globalVariable", "baseLocale"],
-        urlPatterns: [
-          {
-            pattern: "/:path(.*)?",
-            localized: [
-              ["en", "/:path(.*)?"],
-              ["zh-cn", "/zh-cn/:path(.*)?"]
-            ]
-          }
-        ]
+        trailingSlash: "always"
       }),
       tailwindcss()
     ]
