@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "packageManager": "pnpm@12.3.4",
   "engines": {
     "node": "26.x",
     "pnpm": "12.x"
@@ -24,22 +23,22 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/mdx": "^7.0.8",
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/sitemap": "^3.7.4",
     "@iconify-json/fa7-brands": "^1.2.4",
     "@iconify-json/fa7-solid": "^1.2.5",
-    "@inlang/paraglide-js": "^2.25.0",
+    "@inlang/paraglide-js": "^2.26.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.9",
+    "astro": "^7.3.8",
     "astro-mermaid": "^2.1.0",
     "mermaid": "^11.17.2",
     "oxfmt": "^0.65.0",
-    "oxlint": "^1.80.0",
-    "prettier": "^3.9.0",
+    "oxlint": "^1.87.0",
+    "prettier": "^3.9.9",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.3.3",
-    "typescript": "~6.0.0",
-    "wrangler": "^4.127.1"
+    "typescript": "~6.0.3",
+    "wrangler": "^4.149.0"
   },
   "dependencies": {
     "astro-icon": "^1.2.0"
