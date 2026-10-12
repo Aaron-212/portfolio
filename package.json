@@ -41,6 +41,8 @@
     "wrangler": "^4.149.0"
   },
   "dependencies": {
-    "astro-icon": "^1.2.0"
+    "astro-icon": "^1.2.0",
+    "@aaron212/satteri-typlet": "0.0.2",
+    "typlet": "^0.1.0"
   }
 }

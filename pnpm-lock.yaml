@@ -109,9 +109,15 @@ importers:
 
   .:
     dependencies:
+      '@aaron212/satteri-typlet':
+        specifier: 0.0.2
+        version: 0.0.2(astro@7.3.8(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       astro-icon:
         specifier: ^1.2.0
         version: 1.2.0
+      typlet:
+        specifier: ^0.1.0
+        version: 0.1.0
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.10
@@ -169,6 +175,18 @@ importers:
         version: 4.149.0(@types/node@24.19.1)
 
 packages:
+
+  '@aaron212/satteri-typlet@0.0.2':
+    resolution: {integrity: sha512-iw0WjpBYHETgpHQ+rY300zrIqC50gGrePhsXXks6AdphvJpe96blhCHSr+1SJ8XGT5z8X04KoKdwyuaNAJC88Q==}
+    engines: {node: '>=24'}
+    peerDependencies:
+      '@astrojs/markdown-satteri': ^0.4.3
+      astro: ^7.0.0
+    peerDependenciesMeta:
+      '@astrojs/markdown-satteri':
+        optional: true
+      astro:
+        optional: true
 
   '@antfu/install-pkg@2.1.0':
     resolution: {integrity: sha512-sdg9NxU3zR4Mnawfbc/x6GB5Wf17WYud5qOuEuxXjaKpYpMkISSJEjItGebXJ2bQ4DIcly4NYH23mtkGJjvKUw==}
@@ -3231,6 +3249,11 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  typlet@0.1.0:
+    resolution: {integrity: sha512-m9F3chIDfFLxhH2rkhZqUvRtiFDP/gfoWq0g1fSZAPo2IxxZWbirsHRVC6Dlxlte8wiVPDoB/L30CWG8AlNDRA==}
+    engines: {node: '>=22'}
+    hasBin: true
+
   ufo@1.6.4:
     resolution: {integrity: sha512-JFNbkD1Svwe0KvGi8GOeLcP4kAWQ609twvCdcHxq1oSL8svv39ZuSvajcD8B+5D0eL4+s1Is2D/O6KN3qcTeRA==}
 
@@ -3629,6 +3652,13 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@aaron212/satteri-typlet@0.0.2(astro@7.3.8(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
+    dependencies:
+      satteri: 0.10.5
+      typlet: 0.1.0
+    optionalDependencies:
+      astro: 7.3.8(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
 
   '@antfu/install-pkg@2.1.0':
     dependencies:
@@ -6941,6 +6971,8 @@ snapshots:
       semver: 7.8.5
 
   typescript@6.0.3: {}
+
+  typlet@0.1.0: {}
 
   ufo@1.6.4: {}
 

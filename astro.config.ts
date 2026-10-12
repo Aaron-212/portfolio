@@ -5,6 +5,7 @@ import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import icon from "astro-icon";
 import mermaid from "astro-mermaid";
 import { defineConfig } from "astro/config";
+import typlet from "@aaron212/satteri-typlet/astro";
 import { baseLocale, locales } from "./i18n.config";
 
 export default defineConfig({
@@ -27,7 +28,8 @@ export default defineConfig({
     sitemap({
       filter: (page) => !new URL(page).pathname.endsWith("/404/")
     }),
-    icon()
+    icon(),
+    typlet()
   ],
   vite: {
     plugins: [
