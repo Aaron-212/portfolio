@@ -2,4 +2,4 @@ allowBuilds:
   esbuild: true
   workerd: true
 minimumReleaseAgeExclude:
-  - "@aaron212/satteri-typlet@0.0.2"
+  - "@aaron212/astro-typlet@0.1.0"
