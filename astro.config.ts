@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
-import typlet from "@aaron212/satteri-typlet/astro";
+import typlet from "@aaron212/astro-typlet";
 import { baseLocale, locales } from "./i18n.config";
 import mermaid from "astro-mermaid-satteri";
 

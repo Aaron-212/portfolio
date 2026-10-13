@@ -16,8 +16,8 @@ importers:
         version: 0.1.0
     devDependencies:
       '@aaron212/astro-typlet':
-        specifier: 0.1.0
-        version: 0.1.0(@astrojs/markdown-satteri@0.3.8)(astro@7.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: 0.1.1
+        version: 0.1.1(@astrojs/markdown-satteri@0.3.8)(astro@7.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@astrojs/check':
         specifier: ^0.9.10
         version: 0.9.10(@emnapi/runtime@1.11.3)(prettier-plugin-astro@0.14.1)(prettier@3.9.10)(typescript@6.0.3)
@@ -75,8 +75,8 @@ importers:
 
 packages:
 
-  '@aaron212/astro-typlet@0.1.0':
-    resolution: {integrity: sha512-wlyu2vHshtNyp1j0OH3EUVH8/DP18fp3c32xKl3B/RLo6Uf3ZZKIzK2MmkKICVCbAvkXsmwpNNr4SElTnEqc1A==}
+  '@aaron212/astro-typlet@0.1.1':
+    resolution: {integrity: sha512-AW36UqhvAv+lJ6OlWn6b8jNRYQbOArieQI1FS2atPmL1GYRoXDoTj6JJuewiUrWkzlHorfg7oEQ6zor6wSnScg==}
     engines: {node: '>=24'}
     peerDependencies:
       '@astrojs/markdown-satteri': ^0.4.3
@@ -3572,7 +3572,7 @@ packages:
 
 snapshots:
 
-  '@aaron212/astro-typlet@0.1.0(@astrojs/markdown-satteri@0.3.8)(astro@7.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
+  '@aaron212/astro-typlet@0.1.1(@astrojs/markdown-satteri@0.3.8)(astro@7.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       entities: 8.1.0
       satteri: 0.10.5
