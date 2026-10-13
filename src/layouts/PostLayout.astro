@@ -25,7 +25,13 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
     colorScheme.addEventListener("change", setTheme);
   </script>
 
-  <div class="mx-auto my-8 flex max-w-6xl flex-col-reverse gap-8 px-6 lg:flex-row lg:items-start lg:justify-center">
+  <!-- 87rem fits the article, two balanced sidebar spaces, gaps, and outer padding. -->
+  <div
+    class:list={[
+      "mx-auto my-8 flex max-w-6xl flex-col-reverse gap-8 px-6 lg:flex-row lg:items-start lg:justify-center",
+      tableOfContents.length > 0 && "2xl:max-w-[87rem] 2xl:before:block 2xl:before:w-64 2xl:before:flex-none"
+    ]}
+  >
     <article class="prose min-w-0 max-w-3xl flex-1 select-auto dark:prose-invert lg:prose-lg">
       <h1>{title}</h1>
       <slot />
