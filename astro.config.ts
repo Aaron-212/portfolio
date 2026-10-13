@@ -3,10 +3,10 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import icon from "astro-icon";
-import mermaid from "astro-mermaid";
 import { defineConfig } from "astro/config";
 import typlet from "@aaron212/satteri-typlet/astro";
 import { baseLocale, locales } from "./i18n.config";
+import mermaid from "astro-mermaid-satteri";
 
 export default defineConfig({
   site: "https://aaron212.com",
@@ -22,13 +22,18 @@ export default defineConfig({
   },
   integrations: [
     mdx(),
-    mermaid({
-      autoTheme: true
-    }),
     sitemap({
       filter: (page) => !new URL(page).pathname.endsWith("/404/")
     }),
     icon(),
+    mermaid({
+      theme: "neutral",
+      autoTheme: true,
+      themeVariables: {
+        fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, ui-sans, \"Segoe UI\", sans-serif",
+        layout: "elk",
+      }
+    }),
     typlet()
   ],
   vite: {
