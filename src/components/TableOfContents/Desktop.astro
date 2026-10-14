@@ -19,25 +19,24 @@ const { headings } = Astro.props;
     <span
       aria-hidden="true"
       class="pointer-events-none absolute inset-s-0 top-0 h-0 border-s-2 border-s-blue-light opacity-0 transition-[height,transform,opacity] duration-300 ease-out motion-reduce:transition-none dark:border-s-blue-dark"
-      data-toc-indicator></span>
+      data-toc-indicator
+    ></span>
     <ol class="border-s-2 border-s-black/20 text-sm dark:border-s-white/20">
-      {
-        headings.map(({ depth, slug, text }) => (
-          <li
-            class={`group py-1 text-black/60 transition-colors aria-[current=location]:text-blue-light hover:text-black dark:text-white/60 dark:aria-[current=location]:text-blue-dark dark:hover:text-white ${
-              depth === 3 ? "ps-8" : "ps-4"
-            }`}
-            data-toc-item
+      {headings.map(({ depth, slug, text }) => (
+        <li
+          class={`group py-1 text-black/60 transition-colors aria-[current=location]:text-blue-light hover:text-black dark:text-white/60 dark:aria-[current=location]:text-blue-dark dark:hover:text-white ${
+            depth === 3 ? "ps-8" : "ps-4"
+          }`}
+          data-toc-item
+        >
+          <a
+            class="block text-inherit transition-all group-aria-[current=location]:font-semibold line-clamp-2"
+            href={`#${slug}`}
           >
-            <a
-              class="block text-inherit transition-all group-aria-[current=location]:font-semibold line-clamp-2"
-              href={`#${slug}`}
-            >
-              {text}
-            </a>
-          </li>
-        ))
-      }
+            {text}
+          </a>
+        </li>
+      ))}
     </ol>
   </div>
 </nav>

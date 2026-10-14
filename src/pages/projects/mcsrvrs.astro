@@ -18,9 +18,7 @@ import { m } from "@/paraglide/messages.js";
       <span class="text-5xl font-medium lg:text-6xl">McSrvrS</span>
       <BranchTag name="Alpha" tone="mint" />
     </div>
-    <p class="max-w-2xl text-lg font-light text-slate-700 dark:text-slate-300 lg:text-xl">
-      {m.mcsrvrsDescription()}
-    </p>
+    <p class="max-w-2xl text-lg font-light text-slate-700 dark:text-slate-300 lg:text-xl">{m.mcsrvrsDescription()}</p>
     <div class="flex flex-wrap justify-center gap-3">
       <!-- <HeroButton label={m.downloadMacos()} href="https://github.com/Aaron-212/McSrvrS/releases" variant="primary" /> -->
       <HeroButton label={m.checkOnGithub()} href="https://github.com/Aaron-212/McSrvrS" variant="secondary" />
@@ -52,7 +50,9 @@ import { m } from "@/paraglide/messages.js";
       <li>Swift Charts</li>
       <li>{m.widgetKitAndAppIntents()}</li>
       <li>BackgroundTasks</li>
-      <li><a href="https://github.com/apple/swift-async-dns-resolver">swift-async-dns-resolver</a></li>
+      <li>
+        <a href="https://github.com/apple/swift-async-dns-resolver">swift-async-dns-resolver</a>
+      </li>
     </ul>
     <h2>{m.contributing()}</h2>
     <p>{m.contributingDescription()}</p>

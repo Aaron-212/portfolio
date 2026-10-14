@@ -30,8 +30,8 @@ export default defineConfig({
       theme: "neutral",
       autoTheme: true,
       themeVariables: {
-        fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, ui-sans, \"Segoe UI\", sans-serif",
-        layout: "elk",
+        fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, ui-sans, "Segoe UI", sans-serif',
+        layout: "elk"
       }
     }),
     typlet()

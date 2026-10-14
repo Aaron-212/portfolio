@@ -24,7 +24,6 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
     setTheme(colorScheme);
     colorScheme.addEventListener("change", setTheme);
   </script>
-
   <!-- 92rem fits the article, two balanced sidebar spaces, gaps, and outer padding. -->
   <div
     class:list={[
@@ -36,13 +35,11 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
       <h1>{title}</h1>
       <slot />
     </article>
-    {
-      tableOfContents.length > 0 && (
-        <>
-          <MobileTableOfContents headings={tableOfContents} />
-          <DesktopTableOfContents headings={tableOfContents} />
-        </>
-      )
-    }
+    {tableOfContents.length > 0 && (
+      <>
+        <MobileTableOfContents headings={tableOfContents} />
+        <DesktopTableOfContents headings={tableOfContents} />
+      </>
+    )}
   </div>
 </BaseLayout>

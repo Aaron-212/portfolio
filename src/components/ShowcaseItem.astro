@@ -32,19 +32,17 @@ const { title, description, actions, icon, tag } = Astro.props;
 
 <article class="flex flex-col gap-8 p-4 md:gap-12">
   <div class="flex flex-row gap-4 md:gap-12">
-    {
-      icon ? (
-        <AppIcon
-          lightSrc={icon.lightSrc}
-          darkSrc={icon.darkSrc}
-          alt={icon.alt}
-          class="size-16 md:size-24 lg:size-32"
-          sizes="8rem"
-        />
-      ) : (
-        <div class="w-16 shrink-0 md:w-24 lg:w-32" aria-hidden="true" />
-      )
-    }
+    {icon ? (
+      <AppIcon
+        lightSrc={icon.lightSrc}
+        darkSrc={icon.darkSrc}
+        alt={icon.alt}
+        class="size-16 md:size-24 lg:size-32"
+        sizes="8rem"
+      />
+    ) : (
+      <div class="w-16 shrink-0 md:w-24 lg:w-32" aria-hidden="true" />
+    )}
 
     <div class="flex flex-1 flex-col gap-2 md:gap-4">
       <div class="flex flex-row items-center gap-4">
@@ -55,7 +53,9 @@ const { title, description, actions, icon, tag } = Astro.props;
       <p class="text-md text-slate-700 dark:text-slate-300 md:text-lg">{description}</p>
 
       <div class="flex flex-col flex-wrap items-start">
-        {actions.map((action) => <ArrowButton label={action.label} href={action.href} />)}
+        {actions.map((action) => (
+          <ArrowButton label={action.label} href={action.href} />
+        ))}
       </div>
     </div>
   </div>

@@ -7,8 +7,8 @@
   "singleQuote": false,
   "trailingComma": "none",
   "sortPackageJson": false,
+  "astro": true,
   "ignorePatterns": [
-    "**/*.astro",
     "**/.astro/**",
     "**/build/**",
     "**/static/**",

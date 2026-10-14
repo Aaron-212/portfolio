@@ -34,7 +34,9 @@ const defaultLocaleUrl = getAbsoluteLocaleUrl(baseLocale, routePath);
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    {alternateUrls.map(({ hreflang, href }) => <link rel="alternate" hreflang={hreflang} href={href} />)}
+    {alternateUrls.map(({ hreflang, href }) => (
+      <link rel="alternate" hreflang={hreflang} href={href} />
+    ))}
     <link rel="alternate" hreflang="x-default" href={defaultLocaleUrl} />
     <title>{title ? `${title} | Aaron212` : "Aaron212"}</title>
     <slot name="head" />
@@ -42,7 +44,9 @@ const defaultLocaleUrl = getAbsoluteLocaleUrl(baseLocale, routePath);
   </head>
   <body class="flex min-h-dvh flex-col bg-white text-black dark:bg-black dark:text-white">
     <Header />
-    <main class="mt-4 flex-1 select-none"><slot /></main>
+    <main class="mt-4 flex-1 select-none">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
