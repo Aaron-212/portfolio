@@ -1,6 +1,7 @@
 ---
 title: 简单逆向Java程序
 date: 2025-02-24 23:18
+heavyCode: true
 ---
 
 ## 前置

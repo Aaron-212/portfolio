@@ -7,13 +7,23 @@
   text-autospace: normal;
 }
 
-.prose :not(pre) > code {
-  @apply rounded bg-slate-100 px-1 py-0.5 dark:bg-slate-900;
+.prose pre:has(> code) {
+  @apply leading-snug;
 }
 
-.prose code::before,
-.prose code::after {
-  content: none;
+@utility prose-inline-code {
+  & code:not(pre code) {
+    @apply rounded bg-slate-100 px-1 py-0.5 font-medium;
+
+    @variant dark {
+      @apply bg-slate-900;
+    }
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
 }
 
 .astro-code,

@@ -3,18 +3,20 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import DesktopTableOfContents from "@/components/TableOfContents/Desktop.astro";
 import MobileTableOfContents from "@/components/TableOfContents/Mobile.astro";
 import type { MarkdownHeading } from "astro";
+import { getLocale } from "@/paraglide/runtime.js";
 
 interface Props {
   title: string;
-  excerpt?: string;
+  date: Date;
   headings?: MarkdownHeading[];
+  heavyCode?: boolean;
 }
 
-const { title, excerpt, headings = [] } = Astro.props;
+const { title, date, headings = [], heavyCode = false } = Astro.props;
 const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3);
 ---
 
-<BaseLayout title={`${title}`} description={excerpt}>
+<BaseLayout title={`${title}`}>
   <script is:inline slot="head">
     const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
     const setTheme = ({ matches }) => {
@@ -31,8 +33,16 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
       tableOfContents.length > 0 && "2xl:max-w-[92rem] 2xl:before:block 2xl:before:w-74 2xl:before:flex-none"
     ]}
   >
-    <article class="prose min-w-0 max-w-3xl flex-1 select-auto dark:prose-invert lg:prose-lg">
+    <article
+      class:list={[
+        "prose min-w-0 max-w-3xl flex-1 select-auto dark:prose-invert lg:prose-lg",
+        heavyCode && "prose-inline-code"
+      ]}
+    >
       <h1>{title}</h1>
+      <p class="text-slate-500 dark:text-slate-400">
+        <time datetime={date.toISOString()}>{date.toLocaleDateString(getLocale())}</time>
+      </p>
       <slot />
     </article>
     {tableOfContents.length > 0 && (
