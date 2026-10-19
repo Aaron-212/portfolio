@@ -1,5 +1,75 @@
 ---
-import Page from "../../projects/index.astro";
+import ShowcaseItem from "@/components/ShowcaseItem.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<Page />
+<BaseLayout title="项目">
+  <div class="mx-auto max-w-6xl px-6 py-12 lg:py-20">
+    <h1 class="mb-10 text-center text-4xl font-semibold tracking-tight lg:text-5xl">项目</h1>
+
+    <div class="flex flex-col md:gap-4">
+      <ShowcaseItem
+        title="McSrvrS"
+        description="适用于iPhone、iPad和Mac的原生Minecraft Java版服务器监控工具。"
+        icon={{
+          lightSrc: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png",
+          darkSrc: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png",
+          alt: "McSrvrS应用图标"
+        }}
+        tag={{ name: "Alpha", tone: "mint" }}
+        actions={[
+          { label: "了解详情", href: "/zh-cn/projects/mcsrvrs/" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/McSrvrS" }
+        ]}
+      />
+
+      <ShowcaseItem
+        title="FnPilot"
+        description="根据当前窗口自动切换fn键设置。"
+        icon={{
+          lightSrc: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png",
+          darkSrc: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png",
+          alt: "FnPilot应用图标"
+        }}
+        tag={{ name: "Alpha", tone: "mint" }}
+        actions={[
+          { label: "了解详情", href: "/zh-cn/projects/fnpilot/" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/FnPilot" }
+        ]}
+      />
+
+      <ShowcaseItem
+        title="NBTPlus"
+        description="适用于macOS的简洁NBT编辑器。"
+        icon={{
+          lightSrc: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png",
+          darkSrc: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png",
+          alt: "NBTPlus应用图标"
+        }}
+        tag={{ name: "Dev", tone: "purple" }}
+        actions={[
+          { label: "了解详情", href: "/zh-cn/projects/nbtplus/" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/NBTPlus" }
+        ]}
+      />
+
+      <ShowcaseItem
+        title="astro-pele"
+        description="在Astro和Sätteri中使用Pele渲染Mermaid图表。"
+        actions={[
+          { label: "NPM", href: "https://www.npmjs.com/package/@aaron212/astro-pele" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/astro-pele" }
+        ]}
+      />
+
+      <ShowcaseItem
+        title="astro-typlet"
+        description="在Astro和Sätteri中使用Typlet渲染Typst公式。"
+        actions={[
+          { label: "NPM", href: "https://www.npmjs.com/package/@aaron212/astro-typlet" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/astro-typlet" }
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>

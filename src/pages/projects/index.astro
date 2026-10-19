@@ -1,64 +1,74 @@
 ---
 import ShowcaseItem from "@/components/ShowcaseItem.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { m } from "@/paraglide/messages.js";
-import { localizeHref } from "@/paraglide/runtime.js";
 ---
 
-<BaseLayout title={m.navProjects()}>
+<BaseLayout title="Projects">
   <div class="mx-auto max-w-6xl px-6 py-12 lg:py-20">
-    <h1 class="mb-10 text-center text-4xl font-semibold tracking-tight lg:text-5xl">{m.navProjects()}</h1>
+    <h1 class="mb-10 text-center text-4xl font-semibold tracking-tight lg:text-5xl">Projects</h1>
 
     <div class="flex flex-col md:gap-4">
       <ShowcaseItem
         title="McSrvrS"
-        description={m.mcsrvrsDescription()}
+        description="A native Minecraft: Java Edition server monitor for iPhone, iPad, and Mac."
         icon={{
           lightSrc: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png",
           darkSrc: "https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png",
-          alt: m.appIconAlt({ name: "McSrvrS" })
+          alt: "McSrvrS app icon"
         }}
         tag={{ name: "Alpha", tone: "mint" }}
         actions={[
-          { label: m.learnMore(), href: localizeHref("/projects/mcsrvrs") },
+          { label: "Learn More", href: "/projects/mcsrvrs/" },
           { label: "GitHub", href: "https://github.com/Aaron-212/McSrvrS" }
         ]}
       />
 
       <ShowcaseItem
         title="FnPilot"
-        description={m.fnpilotDescription()}
+        description="Change fn key settings based on the frontmost window."
         icon={{
           lightSrc: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png",
           darkSrc: "https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png",
-          alt: m.appIconAlt({ name: "FnPilot" })
+          alt: "FnPilot app icon"
         }}
         tag={{ name: "Alpha", tone: "mint" }}
         actions={[
-          { label: m.learnMore(), href: localizeHref("/projects/fnpilot") },
+          { label: "Learn More", href: "/projects/fnpilot/" },
           { label: "GitHub", href: "https://github.com/Aaron-212/FnPilot" }
         ]}
       />
 
       <ShowcaseItem
         title="NBTPlus"
-        description={m.nbtplusDescription()}
+        description="A simple NBT editor for macOS."
         icon={{
           lightSrc: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png",
           darkSrc: "https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png",
-          alt: m.appIconAlt({ name: "NBTPlus" })
+          alt: "NBTPlus app icon"
         }}
         tag={{ name: "Dev", tone: "purple" }}
         actions={[
-          { label: m.learnMore(), href: localizeHref("/projects/nbtplus") },
+          { label: "Learn More", href: "/projects/nbtplus/" },
           { label: "GitHub", href: "https://github.com/Aaron-212/NBTPlus" }
         ]}
       />
 
       <ShowcaseItem
-        title="CF Senders"
-        description={m.cfSendersDescription()}
-        actions={[{ label: "GitHub", href: "https://github.com/Aaron-212/cf-senders" }]}
+        title="astro-pele"
+        description="Render Mermaid diagrams with Pele in Astro and Sätteri."
+        actions={[
+          { label: "NPM", href: "https://www.npmjs.com/package/@aaron212/astro-pele" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/astro-pele" }
+        ]}
+      />
+
+      <ShowcaseItem
+        title="astro-typlet"
+        description="Render Typst formulas with Typlet in Astro and Sätteri."
+        actions={[
+          { label: "NPM", href: "https://www.npmjs.com/package/@aaron212/astro-typlet" },
+          { label: "GitHub", href: "https://github.com/Aaron-212/astro-typlet" }
+        ]}
       />
     </div>
   </div>
