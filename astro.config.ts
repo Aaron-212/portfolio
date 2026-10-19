@@ -5,8 +5,8 @@ import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import typlet from "@aaron212/astro-typlet";
+import pele from "@aaron212/astro-pele";
 import { baseLocale, locales } from "./i18n.config";
-import mermaid from "astro-mermaid-satteri";
 
 export default defineConfig({
   site: "https://aaron212.com",
@@ -26,14 +26,7 @@ export default defineConfig({
       filter: (page) => !new URL(page).pathname.endsWith("/404/")
     }),
     icon(),
-    mermaid({
-      theme: "neutral",
-      autoTheme: true,
-      themeVariables: {
-        fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, ui-sans, "Segoe UI", sans-serif',
-        layout: "elk"
-      }
-    }),
+    pele(),
     typlet()
   ],
   vite: {

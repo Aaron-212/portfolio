@@ -18,7 +18,8 @@
     "lint": "oxlint --ignore-path=.gitignore ."
   },
   "devDependencies": {
-    "@aaron212/astro-typlet": "0.1.1",
+    "@aaron212/astro-pele": "0.0.2",
+    "@aaron212/astro-typlet": "0.2.0",
     "@astrojs/check": "^0.9.10",
     "@astrojs/mdx": "^7.0.8",
     "@astrojs/sitemap": "^3.7.4",
@@ -29,7 +30,6 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.8",
     "astro-icon": "^1.2.0",
-    "astro-mermaid-satteri": "^0.3.3",
     "oxfmt": "^0.73.0",
     "oxlint": "^1.87.0",
     "tailwindcss": "^4.3.3",
@@ -37,7 +37,7 @@
     "wrangler": "^4.149.0"
   },
   "dependencies": {
-    "mermaid": "^12.1.0",
-    "typlet": "^0.1.0"
+    "pele": "^1.6.0",
+    "typlet": "^0.1.1"
   }
 }
