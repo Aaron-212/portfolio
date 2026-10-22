@@ -27,20 +27,15 @@
   }
 }
 
-.astro-code,
-.astro-code span {
-  background-color: var(--color-slate-100) !important;
+.astro-highlights,
+.astro-highlights span {
+  background-color: var(--color-slate-50) !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  .astro-code,
-  .astro-code span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--color-slate-900) !important;
-
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
+  .astro-highlights,
+  .astro-highlights span {
+    background-color: var(--color-slate-950) !important;
   }
 }
 
