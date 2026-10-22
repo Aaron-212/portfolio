@@ -1,6 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "metaDescription": "Aaron212's portfolio, projects, and blog.",
+  "skipToContent": "Skip to content",
   "navHome": "Home",
   "navAbout": "About",
   "navProjects": "Projects",
@@ -9,6 +10,7 @@
   "navHello": "Hello",
   "navOtherLinks": "Other Links",
   "navPartnerLinks": "Partner Links",
+  "ariaSectionMenu": "{section} menu",
   "ariaMainNavigation": "Main navigation",
   "ariaXProfile": "Aaron212 on X",
   "ariaGithubProfile": "Aaron212 on GitHub",

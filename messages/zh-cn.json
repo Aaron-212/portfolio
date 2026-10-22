@@ -1,6 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "metaDescription": "Aaron212的个人作品集、项目与博客。",
+  "skipToContent": "跳转到正文",
   "navHome": "首页",
   "navAbout": "关于",
   "navProjects": "项目",
@@ -9,6 +10,7 @@
   "navHello": "你好",
   "navOtherLinks": "其他链接",
   "navPartnerLinks": "友情链接",
+  "ariaSectionMenu": "{section}菜单",
   "ariaMainNavigation": "主导航",
   "ariaXProfile": "Aaron212的X主页",
   "ariaGithubProfile": "Aaron212的GitHub主页",

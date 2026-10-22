@@ -8,11 +8,12 @@ import { getLocale } from "@/paraglide/runtime.js";
 interface Props {
   title: string;
   date: Date;
+  lang: string;
   headings?: MarkdownHeading[];
   heavyCode?: boolean;
 }
 
-const { title, date, headings = [], heavyCode = false } = Astro.props;
+const { title, date, lang, headings = [], heavyCode = false } = Astro.props;
 const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3);
 ---
 
@@ -34,21 +35,22 @@ const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3)
     ]}
   >
     <article
+      lang={lang}
       class:list={[
         "prose min-w-0 max-w-3xl flex-1 select-auto dark:prose-invert lg:prose-lg",
         heavyCode && "prose-inline-code"
       ]}
     >
       <h1>{title}</h1>
-      <p class="text-slate-500 dark:text-slate-400">
+      <p lang={getLocale()} class="text-slate-500 dark:text-slate-400">
         <time datetime={date.toISOString()}>{date.toLocaleDateString(getLocale())}</time>
       </p>
       <slot />
     </article>
     {tableOfContents.length > 0 && (
       <>
-        <MobileTableOfContents headings={tableOfContents} />
-        <DesktopTableOfContents headings={tableOfContents} />
+        <MobileTableOfContents headings={tableOfContents} {lang} />
+        <DesktopTableOfContents headings={tableOfContents} {lang} />
       </>
     )}
   </div>

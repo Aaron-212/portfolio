@@ -13,6 +13,7 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf()
       {posts.map((post) => (
         <li>
           <a
+            lang={post.data.lang}
             class="text-xl font-semibold transition-colors hover:text-blue-light focus-visible:text-blue-light dark:hover:text-blue-dark dark:focus-visible:text-blue-dark"
             href={`/zh-cn/blog/${post.id}/`}
           >

@@ -11,6 +11,7 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
+    lang: z.enum(["en", "zh-CN"]),
     heavyCode: z.boolean().default(false),
     tags: z.array(z.string()).optional()
   })
