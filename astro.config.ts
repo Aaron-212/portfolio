@@ -43,12 +43,4 @@ export default defineConfig({
       tailwindcss()
     ]
   },
-  markdown: {
-    shikiConfig: {
-      themes: {
-        light: "min-light",
-        dark: "min-dark"
-      }
-    }
-  }
 });
