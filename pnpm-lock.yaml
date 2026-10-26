@@ -7,13 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      pele:
-        specifier: ^1.6.0
-        version: 1.6.0
-      typlet:
-        specifier: ^0.1.1
-        version: 0.1.1
     devDependencies:
       '@aaron212/astro-highlights':
         specifier: 0.0.1
@@ -22,8 +15,8 @@ importers:
         specifier: 0.1.1
         version: 0.1.1(astro@7.4.0(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@aaron212/astro-typlet':
-        specifier: 0.3.1
-        version: 0.3.1(astro@7.4.0(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: 0.3.2
+        version: 0.3.2(astro@7.4.0(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@astrojs/check':
         specifier: ^0.9.10
         version: 0.9.10(@emnapi/runtime@1.11.3)(prettier@3.9.10)(typescript@6.0.3)
@@ -93,8 +86,8 @@ packages:
       astro:
         optional: true
 
-  '@aaron212/astro-typlet@0.3.1':
-    resolution: {integrity: sha512-yhOD+aC2XLe3opHhRcbTBNf5mgXYuVcynLyp6iOFqg4bGBy11LE5GBb1nOAFYWmETjbBT7XaoHqYB6s0BNyvbw==}
+  '@aaron212/astro-typlet@0.3.2':
+    resolution: {integrity: sha512-T10qo14eQbvrVYvJv5uoly6fb+i33ByeScnpcrNdLmiDS27fnCZ+TBLIenGmh5Rf1ryGF/TTiayBbSK2sYRaUw==}
     engines: {node: '>=24'}
     peerDependencies:
       '@astrojs/markdown-satteri': ^0.3.7 || ^0.4.0
@@ -2799,8 +2792,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typlet@0.1.1:
-    resolution: {integrity: sha512-2NxXUNwCJsa/LnMS+iZhy+DnkWJxkh+8j3OQgWXxW4mkE98pkxVQ48TELMy9LTviUm/I9eOsdtxuDgioOh5Qmw==}
+  typlet@0.2.0:
+    resolution: {integrity: sha512-Uyf/FCR0+tl+PUPEahHDPzI+vNeqNNh2J+tqhlTdPfHjfAwPN7HwNyqbe0X4qdF3eKbynaFg9bBBpj7Nj09h1g==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -3219,11 +3212,11 @@ snapshots:
     optionalDependencies:
       astro: 7.4.0(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
 
-  '@aaron212/astro-typlet@0.3.1(astro@7.4.0(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
+  '@aaron212/astro-typlet@0.3.2(astro@7.4.0(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       entities: 8.1.0
       satteri: 0.10.5
-      typlet: 0.1.1
+      typlet: 0.2.0
     optionalDependencies:
       astro: 7.4.0(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
 
@@ -6102,7 +6095,7 @@ snapshots:
 
   typescript@6.0.3: {}
 
-  typlet@0.1.1: {}
+  typlet@0.2.0: {}
 
   ufo@1.6.4: {}
 
