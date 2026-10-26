@@ -16,8 +16,10 @@
   "ariaGithubProfile": "Aaron212的GitHub主页",
   "ariaToggleNavigation": "切换导航菜单",
   "ariaSwitchLanguage": "切换语言",
-  "footerLicensePrefix": "所有内容均采用",
-  "footerLicenseName": "CC BY-SA 4.0许可协议",
+  "footerSourceLicense": "源代码采用 MIT 许可证授权。",
+  "footerLicensePrefix": "除非另有说明，网站内容采用",
+  "footerLicenseName": "CC BY SA 4.0",
+  "footerLicenseSuffix": "许可协议授权。",
   "tocOnThisPage": "本页内容",
   "tocAriaLabel": "目录"
 }

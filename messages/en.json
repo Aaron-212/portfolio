@@ -16,8 +16,10 @@
   "ariaGithubProfile": "Aaron212 on GitHub",
   "ariaToggleNavigation": "Toggle navigation menu",
   "ariaSwitchLanguage": "Switch language",
-  "footerLicensePrefix": "All content is under ",
-  "footerLicenseName": "CC BY-SA 4.0 License",
+  "footerSourceLicense": "Source code is licensed under the MIT License.",
+  "footerLicensePrefix": "Website content is licensed under ",
+  "footerLicenseName": "CC BY SA 4.0",
+  "footerLicenseSuffix": ", unless otherwise noted.",
   "tocOnThisPage": "On this page",
   "tocAriaLabel": "Table of contents"
 }
