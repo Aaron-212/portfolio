@@ -1,0 +1,68 @@
+---
+import BranchTag from "@/components/BranchTag.astro";
+import HeroButton from "@/components/HeroButton.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="McSrvrS">
+  <div class="mx-auto mb-12 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
+    <img
+      src="https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS%20Hero%20Showcase.png"
+      alt="McSrvrS Hero Showcase"
+      class="w-full rounded-xl"
+      width={2560}
+      height={1322}
+    />
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <h1 class="text-5xl font-medium lg:text-6xl">McSrvrS</h1>
+      <BranchTag name="Alpha" tone="mint" />
+    </div>
+    <p class="max-w-2xl text-lg font-light text-slate-700 dark:text-slate-300 lg:text-xl">
+      A native Minecraft: Java Edition server monitor for iPhone, iPad, and Mac.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <!-- <HeroButton label="Download (macOS)" href="https://github.com/Aaron-212/McSrvrS/releases" variant="primary" /> -->
+      <HeroButton label="Check it on GitHub" href="https://github.com/Aaron-212/McSrvrS" variant="secondary" />
+    </div>
+  </div>
+  <div class="prose mx-auto flex max-w-4xl flex-col px-6 select-auto dark:prose-invert lg:prose-lg">
+    <div>
+      <p>
+        McSrvrS keeps your Minecraft servers in one place and shows their latest status, latency, player count, version,
+        message of the day, and connection history, via Minecraft Server List Ping protocol. It is built with SwiftUI
+        and uses SwiftData to persist server details and status snapshots locally.
+      </p>
+    </div>
+    <h2>Features</h2>
+    <ul>
+      <li>Monitor multiple Minecraft: Java Edition servers.</li>
+      <li>View latency, version, MOTD, favicon, online players, and player limits.</li>
+      <li>Explore historical player counts with interactive Swift Charts.</li>
+      <li>Search, filter, reorder, edit, refresh, and remove saved servers.</li>
+      <li>Resolve Minecraft DNS SRV records automatically when no port is supplied.</li>
+      <li>Use hostnames, IPv4 addresses, IPv6 addresses, and custom ports.</li>
+      <li>Configure foreground and background refresh intervals.</li>
+      <li>Add configurable small and medium widgets for quick server status checks.</li>
+      <li>Open a server directly in the app from its widget.</li>
+      <li>Check up to three servers from the macOS menu bar.</li>
+    </ul>
+    <h2>Roadmap</h2>
+    <p>Coming soon...</p>
+    <h2>Built With</h2>
+    <ul>
+      <li>SwiftUI</li>
+      <li>SwiftData</li>
+      <li>Swift Charts</li>
+      <li>WidgetKit and App Intents</li>
+      <li>BackgroundTasks</li>
+      <li>
+        <a href="https://github.com/apple/swift-async-dns-resolver">swift-async-dns-resolver</a>
+      </li>
+    </ul>
+    <h2>Contributing</h2>
+    <p>
+      Issues and pull requests are welcome. For UI changes, include screenshots or a screen recording and note which
+      Apple platforms were verified. Please run the relevant build and test commands before submitting a pull request.
+    </p>
+  </div>
+</BaseLayout>

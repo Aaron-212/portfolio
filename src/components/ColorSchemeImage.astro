@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends Omit<HTMLAttributes<"img">, "src" | "srcset"> {
+  lightSrc: string;
+  darkSrc: string;
+  lightSrcset?: string;
+  darkSrcset?: string;
+  pictureClass?: string;
+}
+
+const { lightSrc, darkSrc, lightSrcset, darkSrcset, pictureClass, ...imageAttributes } = Astro.props;
+---
+
+<picture class={pictureClass}>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset={darkSrcset ?? darkSrc}
+    sizes={darkSrcset ? imageAttributes.sizes : undefined}
+  />
+  <img {...imageAttributes} src={lightSrc} srcset={lightSrcset} />
+</picture>

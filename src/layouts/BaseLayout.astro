@@ -1,0 +1,59 @@
+---
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import { m } from "@/paraglide/messages.js";
+import { deLocalizeHref, getLocale } from "@/paraglide/runtime.js";
+import { getAbsoluteLocaleUrl } from "astro:i18n";
+import { ClientRouter } from "astro:transitions";
+import { baseLocale, localeDefinitions } from "../../i18n.config";
+import "@/app.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = m.metaDescription() } = Astro.props;
+const lang = getLocale();
+const routePath = deLocalizeHref(Astro.url.pathname).replace(/^\/+/, "");
+const canonicalUrl = getAbsoluteLocaleUrl(lang, routePath);
+const alternateUrls = localeDefinitions.map(({ locale, hreflang }) => ({
+  hreflang,
+  href: getAbsoluteLocaleUrl(locale, routePath)
+}));
+const defaultLocaleUrl = getAbsoluteLocaleUrl(baseLocale, routePath);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {alternateUrls.map(({ hreflang, href }) => (
+      <link rel="alternate" hreflang={hreflang} href={href} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={defaultLocaleUrl} />
+    <title>{title ? `${title} | Aaron212` : "Aaron212"}</title>
+    <slot name="head" />
+    <ClientRouter />
+  </head>
+  <body class="flex min-h-dvh flex-col bg-white text-black dark:bg-black dark:text-white">
+    <a
+      href="#content"
+      class="sr-only focus:fixed focus:top-2 focus:left-2 focus:z-60 focus:not-sr-only focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-black focus:outline-2 focus:outline-offset-2 focus:outline-blue-light dark:focus:bg-black dark:focus:text-white dark:focus:outline-blue-dark"
+    >
+      {m.skipToContent()}
+    </a>
+    <Header />
+    <main id="content" tabindex="-1" class="mt-4 flex-1 scroll-mt-16 select-none">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

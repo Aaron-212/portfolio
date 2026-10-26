@@ -1,0 +1,26 @@
+---
+import ShowcaseItem from "@/components/ShowcaseItem.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="友情链接">
+  <div class="mx-auto max-w-6xl px-6 py-12 lg:py-20">
+    <h1 class="mb-10 text-center text-4xl font-semibold tracking-tight lg:text-5xl">友情链接</h1>
+
+    <div class="flex flex-col md:gap-4">
+      <ShowcaseItem
+        title="KIRAKIRA Apple"
+        description="简介"
+        icon={{
+          lightSrc: "https://images-bucket.aaron212.com/portfolio/partners/KIRAKIRA-iOS-Default-1024%401x.png",
+          darkSrc: "https://images-bucket.aaron212.com/portfolio/partners/KIRAKIRA-iOS-Dark-1024%401x.png",
+          alt: "KIRAKIRA Apple应用图标"
+        }}
+        actions={[
+          { label: "网站", href: "https://kirakira.moe" },
+          { label: "GitHub", href: "https://github.com/KIRAKIRA-DOUGA/KIRAKIRA-Apple" }
+        ]}
+      />
+    </div>
+  </div>
+</BaseLayout>

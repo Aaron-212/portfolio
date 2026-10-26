@@ -1,0 +1,41 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "26.x",
+    "pnpm": "12.x"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "deploy:workers": "astro build && wrangler deploy",
+    "preview": "astro preview",
+    "check": "node scripts/check-i18n-config.mjs && astro check",
+    "check:watch": "astro check --watch",
+    "format": "oxfmt --ignore-path=.gitignore .",
+    "lint": "oxlint --ignore-path=.gitignore ."
+  },
+  "devDependencies": {
+    "@aaron212/astro-highlights": "0.0.1",
+    "@aaron212/astro-pele": "0.1.1",
+    "@aaron212/astro-typlet": "0.3.2",
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/sitemap": "^3.7.4",
+    "@iconify-json/fa7-brands": "^1.2.4",
+    "@iconify-json/fa7-solid": "^1.2.5",
+    "@inlang/paraglide-js": "^2.26.0",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.8",
+    "astro-icon": "^1.2.0",
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.87.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.3",
+    "wrangler": "^4.149.0"
+  }
+}

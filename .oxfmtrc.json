@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "singleQuote": false,
+  "trailingComma": "none",
+  "sortPackageJson": false,
+  "astro": true,
+  "ignorePatterns": [
+    "**/.astro/**",
+    "**/build/**",
+    "**/static/**",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "bun.lock",
+    "bun.lockb"
+  ]
+}

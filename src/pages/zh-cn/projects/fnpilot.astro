@@ -1,0 +1,60 @@
+---
+import AppIcon from "@/components/AppIcon.astro";
+import BranchTag from "@/components/BranchTag.astro";
+import HeroButton from "@/components/HeroButton.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="FnPilot">
+  <div class="mx-auto flex max-w-3xl flex-col items-center px-6 py-12 text-center lg:py-20">
+    <AppIcon
+      lightSrc="https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png"
+      darkSrc="https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png"
+      alt="FnPilot应用图标"
+      class="mb-8 w-48 lg:w-56"
+      sizes="(min-width: 64rem) 14rem, 12rem"
+    />
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <h1 class="text-5xl font-medium lg:text-6xl">FnPilot</h1>
+      <BranchTag name="Beta" tone="mint" />
+    </div>
+    <p class="mt-5 text-xl font-light text-slate-700 dark:text-slate-300 lg:text-2xl">根据当前窗口自动切换fn键设置。</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <HeroButton label="发布版本" href="https://github.com/Aaron-212/FnPilot/releases/latest" variant="primary" />
+      <HeroButton label="在GitHub上查看" href="https://github.com/Aaron-212/FnPilot" variant="secondary" />
+    </div>
+    <p class="p-4 text-slate-500">需要 macOS 26.0 或更高版本 | 通用二进制（Apple 芯片和 Intel）</p>
+  </div>
+  <div class="prose mx-auto max-w-3xl select-auto dark:prose-invert lg:prose-lg">
+    <p>
+      FnPilot 是一款 macOS
+      菜单栏应用，可全局切换键盘功能键模式，也可为各个应用单独设置。你可以在大多数应用中保留媒体控制，
+      在终端、编辑器、集成开发环境或游戏中使用标准的 F1–F12 功能键。
+    </p>
+    <h2>功能</h2>
+    <ul>
+      <li>通过菜单栏切换 Media 和 Fn 模式。</li>
+      <li>使用 Media 模式控制亮度、音量、播放等媒体功能。</li>
+      <li>使用 Fn 模式启用标准功能键。</li>
+      <li>为各个应用设置独立规则，并随前台应用自动切换。</li>
+      <li>选择退出 FnPilot 后保留的键盘模式。</li>
+      <li>为应用包和独立可执行文件路径添加规则。</li>
+      <li>支持登录时启动，偏好设置保存在本地。</li>
+    </ul>
+    <h2>下载发布版本</h2>
+    <p>
+      GitHub 发布版本中的应用包未经签名。macOS 可能阻止首次启动，或显示无法验证开发者的提示。如果你信任下载来源，
+      可通过访达的“打开”命令或系统设置中的隐私控制来允许应用运行。
+    </p>
+    <h2>工作方式</h2>
+    <p>
+      FnPilot 在菜单栏中运行，启动时不会打开设置窗口。Mac 从睡眠中唤醒或你返回自己的用户会话后，
+      它会读取系统键盘模式，并重新应用前台应用的规则或全局模式。睡眠期间或其他用户会话处于活动状态时，FnPilot
+      会暂停应用规则。
+    </p>
+    <p>
+      在系统设置中更改键盘模式不会更新 FnPilot 保存的偏好设置。这些更改可能保持生效，直到你切换应用、唤醒 Mac、
+      返回自己的用户会话或编辑 FnPilot 规则。此时 FnPilot 会重新应用相应规则；它不会持续监控系统设置。
+    </p>
+  </div>
+</BaseLayout>

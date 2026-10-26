@@ -1,0 +1,82 @@
+---
+import AppIcon from "@/components/AppIcon.astro";
+import BranchTag from "@/components/BranchTag.astro";
+import HeroButton from "@/components/HeroButton.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div class="flex flex-col gap-4">
+    <div class="flex h-[72dvh] min-h-128 items-center justify-center bg-slate-50 px-4 dark:bg-slate-950">
+      <div class="flex flex-col items-center gap-4">
+        <AppIcon
+          lightSrc="https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Default-1024%401x.png"
+          darkSrc="https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS-iOS-Dark-1024%401x.png"
+          alt="McSrvrS app icon"
+          width={1024}
+          height={1024}
+          class="w-48 lg:w-64"
+          priority
+        />
+        <div class="flex items-center gap-2">
+          <h1 class="text-5xl font-medium lg:text-6xl">McSrvrS</h1>
+          <BranchTag name="Alpha" tone="mint" />
+        </div>
+        <span class="text-center text-lg font-light lg:text-2xl">Check your Minecraft Server's status on the go.</span>
+        <div class="flex items-center gap-4">
+          <HeroButton label="Learn More" href="/projects/mcsrvrs/" variant="primary" />
+          <HeroButton label="Check it on GitHub" href="https://github.com/Aaron-212/McSrvrS" variant="secondary" />
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4 lg:flex-row">
+      <div class="flex h-[72dvh] min-h-128 items-center justify-center bg-slate-50 bg-linear-to-b lg:flex-1 dark:bg-slate-950">
+        <div class="flex flex-col items-center gap-4">
+          <AppIcon
+            lightSrc="https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png"
+            darkSrc="https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png"
+            alt="FnPilot app icon"
+            width={1024}
+            height={1024}
+            class="w-48 lg:w-64"
+          />
+          <div class="flex items-center gap-2">
+            <h2 class="text-5xl font-medium lg:text-6xl">FnPilot</h2>
+            <BranchTag name="Beta" tone="mint" />
+          </div>
+          <span class="text-center text-lg font-light lg:text-2xl">
+            Change fn key settings based on the frontmost window.
+          </span>
+          <div class="flex items-center gap-4">
+            <HeroButton label="Learn More" href="/projects/fnpilot/" variant="primary" />
+            <HeroButton label="Check it on GitHub" href="https://github.com/Aaron-212/FnPilot" variant="secondary" />
+          </div>
+        </div>
+      </div>
+      <div class="flex h-[72dvh] min-h-128 items-center justify-center bg-slate-50 bg-linear-to-b to-75% lg:flex-1 dark:bg-slate-950">
+        <div class="flex flex-col items-center gap-4">
+          <AppIcon
+            lightSrc="https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Default-1024%401x.png"
+            darkSrc="https://images-bucket.aaron212.com/portfolio/nbtplus/NBTPlus-macOS-Dark-1024%401x.png"
+            alt="NBTPlus app icon"
+            width={1024}
+            height={1024}
+            class="w-48 lg:w-64"
+          />
+          <div class="flex items-center gap-2">
+            <h2 class="text-5xl font-medium lg:text-6xl">NBTPlus</h2>
+            <BranchTag name="Dev" tone="purple" />
+          </div>
+          <span class="text-center text-lg font-light lg:text-2xl">A simple NBT editor for macOS.</span>
+          <div class="flex items-center gap-4">
+            <HeroButton label="Learn More" href="/projects/nbtplus/" variant="primary" />
+            <HeroButton label="Check it on GitHub" href="https://github.com/Aaron-212/NBTPlus" variant="secondary" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex h-[72dvh] min-h-128 items-center justify-center bg-slate-200 dark:bg-slate-800">
+      <div>Under Construction...</div>
+    </div>
+  </div>
+</BaseLayout>

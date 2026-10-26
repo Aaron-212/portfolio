@@ -1,0 +1,63 @@
+---
+import AppIcon from "@/components/AppIcon.astro";
+import BranchTag from "@/components/BranchTag.astro";
+import HeroButton from "@/components/HeroButton.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="FnPilot">
+  <div class="mx-auto flex max-w-3xl flex-col items-center px-6 py-12 text-center lg:py-20">
+    <AppIcon
+      lightSrc="https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Default-1024%401x.png"
+      darkSrc="https://images-bucket.aaron212.com/portfolio/fnpilot/FnPilot-macOS-Dark-1024%401x.png"
+      alt="FnPilot app icon"
+      class="mb-8 w-48 lg:w-56"
+      sizes="(min-width: 64rem) 14rem, 12rem"
+    />
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <h1 class="text-5xl font-medium lg:text-6xl">FnPilot</h1>
+      <BranchTag name="Beta" tone="mint" />
+    </div>
+    <p class="mt-5 text-xl font-light text-slate-700 dark:text-slate-300 lg:text-2xl">
+      Change fn key settings based on the frontmost window.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <HeroButton label="Releases" href="https://github.com/Aaron-212/FnPilot/releases/latest" variant="primary" />
+      <HeroButton label="Check it on GitHub" href="https://github.com/Aaron-212/FnPilot" variant="secondary" />
+    </div>
+    <p class="p-4 text-slate-500">Requires macOS 26.0 or later | Universal Binary</p>
+  </div>
+  <div class="prose mx-auto max-w-3xl select-auto dark:prose-invert lg:prose-lg">
+    <p>
+      FnPilot is a macOS menu bar app for switching the keyboard function-key mode globally or per application. Keep
+      media controls in most apps and use standard F1–F12 keys in terminals, editors, IDEs, or games.
+    </p>
+    <h2>Features</h2>
+    <ul>
+      <li>Switch between Media and Fn modes from the menu bar.</li>
+      <li>Use Media mode for brightness, volume, playback, and other media controls.</li>
+      <li>Use Fn mode for standard function keys.</li>
+      <li>Set per-app overrides that follow the foreground app.</li>
+      <li>Choose which mode stays active after quitting FnPilot.</li>
+      <li>Add rules for application bundles and standalone executable paths.</li>
+      <li>Launch at login and store preferences locally.</li>
+    </ul>
+    <h2>Release downloads</h2>
+    <p>
+      GitHub releases contain unsigned app bundles. macOS may block the first launch or show an unidentified developer
+      warning. If you trust the source, use Finder’s Open command or the privacy controls in System Settings to allow
+      the app.
+    </p>
+    <h2>How it works</h2>
+    <p>
+      FnPilot runs in the menu bar without opening its settings window at launch. After waking from sleep or returning
+      to your user session, it reads the system keyboard mode and reapplies the foreground app’s rule or the global
+      mode. It pauses rule application while asleep or while another user session is active.
+    </p>
+    <p>
+      Changes in System Settings don’t update FnPilot’s saved preferences. They can remain active until you switch apps,
+      wake your Mac, return to your user session, or edit a FnPilot rule. FnPilot then reapplies the applicable rule; it
+      doesn’t continuously monitor System Settings.
+    </p>
+  </div>
+</BaseLayout>

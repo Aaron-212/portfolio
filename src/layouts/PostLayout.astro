@@ -1,0 +1,57 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import DesktopTableOfContents from "@/components/TableOfContents/Desktop.astro";
+import MobileTableOfContents from "@/components/TableOfContents/Mobile.astro";
+import type { MarkdownHeading } from "astro";
+import { getLocale } from "@/paraglide/runtime.js";
+
+interface Props {
+  title: string;
+  date: Date;
+  lang: string;
+  headings?: MarkdownHeading[];
+  heavyCode?: boolean;
+}
+
+const { title, date, lang, headings = [], heavyCode = false } = Astro.props;
+const tableOfContents = headings.filter(({ depth }) => depth >= 2 && depth <= 3);
+---
+
+<BaseLayout title={`${title}`}>
+  <script is:inline slot="head">
+    const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const setTheme = ({ matches }) => {
+      document.documentElement.dataset.theme = matches ? "dark" : "light";
+    };
+
+    setTheme(colorScheme);
+    colorScheme.addEventListener("change", setTheme);
+  </script>
+  <!-- 92rem fits the article, two balanced sidebar spaces, gaps, and outer padding. -->
+  <div
+    class:list={[
+      "mx-auto my-8 flex max-w-6xl flex-col-reverse gap-8 px-6 lg:flex-row lg:items-start lg:justify-center",
+      tableOfContents.length > 0 && "2xl:max-w-[92rem] 2xl:before:block 2xl:before:w-74 2xl:before:flex-none"
+    ]}
+  >
+    <article
+      lang={lang}
+      class:list={[
+        "prose min-w-0 max-w-3xl flex-1 select-auto dark:prose-invert lg:prose-lg",
+        heavyCode && "prose-inline-code"
+      ]}
+    >
+      <h1>{title}</h1>
+      <p lang={getLocale()} class="text-slate-500 dark:text-slate-400">
+        <time datetime={date.toISOString()}>{date.toLocaleDateString(getLocale())}</time>
+      </p>
+      <slot />
+    </article>
+    {tableOfContents.length > 0 && (
+      <>
+        <MobileTableOfContents headings={tableOfContents} {lang} />
+        <DesktopTableOfContents headings={tableOfContents} {lang} />
+      </>
+    )}
+  </div>
+</BaseLayout>

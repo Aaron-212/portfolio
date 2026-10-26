@@ -1,0 +1,27 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Blog">
+  <div class="mx-auto py-12 max-w-4xl px-6 lg:py-20">
+    <h1 class="mb-10 text-center text-4xl font-semibold lg:text-5xl">Blog</h1>
+
+    <ul class="space-y-6">
+      {posts.map((post) => (
+        <li>
+          <a
+            lang={post.data.lang}
+            class="text-xl font-semibold transition-colors hover:text-blue-light focus-visible:text-blue-light dark:hover:text-blue-dark dark:focus-visible:text-blue-dark"
+            href={`/blog/${post.id}/`}
+          >
+            {post.data.title}
+          </a>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{post.data.date.toLocaleDateString("en")}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import BranchTag from "@/components/BranchTag.astro";
+import HeroButton from "@/components/HeroButton.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="McSrvrS">
+  <div class="mx-auto mb-12 flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
+    <img
+      src="https://images-bucket.aaron212.com/portfolio/mcsrvrs/McSrvrS%20Hero%20Showcase.png"
+      alt="McSrvrS功能展示"
+      class="w-full rounded-xl"
+      width={2560}
+      height={1322}
+    />
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <h1 class="text-5xl font-medium lg:text-6xl">McSrvrS</h1>
+      <BranchTag name="Alpha" tone="mint" />
+    </div>
+    <p class="max-w-2xl text-lg font-light text-slate-700 dark:text-slate-300 lg:text-xl">
+      适用于iPhone、iPad和Mac的原生Minecraft Java版服务器监控工具。
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <!-- <HeroButton label="下载（macOS）" href="https://github.com/Aaron-212/McSrvrS/releases" variant="primary" /> -->
+      <HeroButton label="在GitHub上查看" href="https://github.com/Aaron-212/McSrvrS" variant="secondary" />
+    </div>
+  </div>
+  <div class="prose mx-auto flex max-w-4xl flex-col px-6 select-auto dark:prose-invert lg:prose-lg">
+    <div>
+      <p>
+        McSrvrS通过Minecraft Server List
+        Ping协议，将你的Minecraft服务器集中管理，并显示最新状态、延迟、玩家数量、版本、每日消息和连接历史。应用使用SwiftUI构建，并通过SwiftData将服务器详情和状态快照保存在本地。
+      </p>
+    </div>
+    <h2>功能</h2>
+    <ul>
+      <li>监控多个Minecraft Java版服务器。</li>
+      <li>查看延迟、版本、MOTD、图标、在线玩家和玩家上限。</li>
+      <li>通过交互式Swift Charts查看历史玩家数量。</li>
+      <li>搜索、筛选、排序、编辑、刷新和移除已保存的服务器。</li>
+      <li>未提供端口时，自动解析Minecraft DNS SRV记录。</li>
+      <li>支持主机名、IPv4地址、IPv6地址和自定义端口。</li>
+      <li>配置前台和后台刷新间隔。</li>
+      <li>添加可配置的小号和中号小组件，快速查看服务器状态。</li>
+      <li>从小组件直接在应用中打开服务器。</li>
+      <li>通过macOS菜单栏查看最多三台服务器。</li>
+    </ul>
+    <h2>路线图</h2>
+    <p>即将推出……</p>
+    <h2>技术栈</h2>
+    <ul>
+      <li>SwiftUI</li>
+      <li>SwiftData</li>
+      <li>Swift Charts</li>
+      <li>WidgetKit与App Intents</li>
+      <li>BackgroundTasks</li>
+      <li>
+        <a href="https://github.com/apple/swift-async-dns-resolver">swift-async-dns-resolver</a>
+      </li>
+    </ul>
+    <h2>参与贡献</h2>
+    <p>
+      欢迎提交Issue和Pull Request。若涉及界面更改，请附上截图或屏幕录制，并注明已验证的Apple平台。提交Pull
+      Request前，请运行相关的构建和测试命令。
+    </p>
+  </div>
+</BaseLayout>
